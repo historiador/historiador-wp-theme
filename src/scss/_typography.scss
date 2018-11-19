@@ -1,0 +1,170 @@
+body,
+button,
+input,
+select,
+textarea {
+    @include fluid-font-size($font-size-medium);
+
+	color: $color-base-fg;
+	font-family: $font-family-body;
+	font-weight: 400;
+	line-height: $line-height-body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+    font-family: $font-family-heading;
+	font-weight: 700;
+	line-height: $line-height-heading;
+}
+
+h1 {
+    @include fluid-font-size($font-size-xxxlarge);
+}
+
+h2,
+.home.blog .entry-title {
+    @include fluid-font-size($font-size-xxlarge);
+}
+
+h3 {
+    @include fluid-font-size($font-size-xlarge);
+}
+
+h4 {
+    @include fluid-font-size($font-size-large);
+}
+
+h5 {
+    @include fluid-font-size($font-size-medium);
+}
+
+h6 {
+    @include fluid-font-size($font-size-small);
+}
+
+p {
+	margin: 0 0 $vertical-rhythm-0;
+	padding: 0;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+    @include fluid-font-size($font-size-medium);
+
+	color: $color-base-fg-alt;
+	font-style: italic;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+}
+
+blockquote cite {
+	display: block;
+	font-style: normal;
+	margin-top: $vertical-rhythm-0;
+}
+
+address {
+	margin: 0 0 $vertical-rhythm-0;
+}
+
+pre {
+    @include fluid-font-size($font-size-small);
+
+	overflow: auto;
+	max-width: 100%;
+	background: $color-base-bg-alt;
+	font-family: $font-family-code;
+	line-height: $line-height-body;
+	padding: $vertical-rhythm-0;
+	margin-bottom: $vertical-rhythm-0;
+}
+
+code,
+kbd,
+tt,
+var {
+    @include fluid-font-size($font-size-small);
+
+	font-family: $font-family-code;
+}
+
+abbr,
+acronym {
+    // TODO review dividers in variables and add here
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: $color-base-bg-alt;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+blockquote {
+	quotes: "" "";
+}
+
+q {
+	quotes: "“" "”" "‘" "’";
+}
+
+blockquote:before,
+blockquote:after {
+	content: "";
+}
+
+:focus {
+	outline: none;
+}
+
+// Typographic spacing
+// -------------------
+p + h2,
+p + h3,
+ul + h2,
+ul + h3,
+ol + h2,
+ol + h3,
+blockquote + h2,
+blockquote + h3,
+div + h2,
+div + h3,
+small + h2,
+small + h3 {
+    @include tablet {
+        margin-top: $vertical-rhythm-1;
+    }
+
+    margin-top: $vertical-rhythm-0;
+}
+
+h1 + h2,
+h2 + h3,
+h3 + h4 {
+    margin-top: 0;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+    margin: 0;
+}

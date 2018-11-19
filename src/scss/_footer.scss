@@ -1,0 +1,83 @@
+// TODO consider brand colours for footer
+// This would apply to all definitions in this stylesheet
+.site-footer {
+    // TODO review dividers in variables and edit this
+	border-top: 1px solid #eee;
+
+    .wrap {
+        padding-bottom: $vertical-rhythm-0;
+        padding-top: $vertical-rhythm-0;
+    }
+
+    .widget-area {
+        padding-bottom: $vertical-rhythm-0;
+        padding-top: $vertical-rhythm-0;
+    }
+}
+
+.social-navigation {
+    @include fluid-font-size($font-size-medium);
+	margin-bottom: $vertical-rhythm-0;
+
+    ul {
+        list-style: none;
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+
+    li {
+        display: inline;
+    }
+
+    a {
+        background-color: #767676;
+        -webkit-border-radius: 40px;
+        border-radius: 40px;
+        color: #fff;
+        display: inline-block;
+        height: 40px;
+        margin: 0 1em 0.5em 0;
+        text-align: center;
+        width: 40px;
+
+        &:hover,
+        &:focus {
+            background-color: #333;
+        }
+    }
+
+    // TODO add fluid icon sizes in variables and include here
+    .icon {
+        height: 16px;
+        top: 12px;
+        width: 16px;
+        vertical-align: top;
+    }
+}
+
+.site-info {
+	font-size: 14px;
+	font-size: 0.875rem;
+	margin-bottom: 1em;
+
+    a {
+        color: #666;
+    }
+
+    .sep {
+        margin: 0;
+        display: block;
+        visibility: hidden;
+        height: 0;
+        width: 100%;
+    }
+
+    span[role=separator] {
+        padding: 0 0.2em 0 0.4em;
+    }
+
+    // TODO what is this? FontAwesome glyph?
+    span[role=separator]::before {
+        content: '\002f';
+    }
+}
