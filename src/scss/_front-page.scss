@@ -39,46 +39,45 @@
 }
 
 .panel-content .wrap {
-	padding-bottom: 0.5em;
-	padding-top: 1.75em;
+	padding-bottom: $vertical-rhythm-0;
+	padding-top: $vertical-rhythm-1;
 }
 
 /* Panel edit link */
 
 .historiador-panel .edit-link {
 	display: block;
-	margin: 0.3em 0 0;
+	margin: $space-0 0 0;
 }
 
 .historiador-panel .entry-header .edit-link {
-	font-size: 14px;
-	font-size: 0.875rem;
+	@include fluid-font-size($font-size-small);
 }
 
 /* Front Page - Recent Posts */
-
+// TODO review all the following
 .historiador-front-page .panel-content .recent-posts article {
 	border: 0;
-	color: #333;
-	margin-bottom: 3em;
+	color: $color-base-fg;
+	margin-bottom: $vertical-rhythm-2;
 }
 
 .recent-posts .entry-header {
-	margin-bottom: 1.2em;
+	margin-bottom: $vertical-rhythm-1;
 }
 
 .page .panel-content .recent-posts .entry-title {
-	font-size: 20px;
-	font-size: 1.25rem;
+    @include fluid-font-size($font-size-xl);
+
 	font-weight: 300;
 	letter-spacing: 0;
 	text-transform: none;
 }
 
 .historiador-panel .recent-posts .entry-header .edit-link {
-	color: #222;
+    @include fluid-font-size ($font-size-small);
+
+	color: $color-base-fg-alt;
 	display: inline-block;
-	font-size: 11px;
-	font-size: 0.6875rem;
-	margin-left: 1em;
+	margin-left: $space-1;
 }

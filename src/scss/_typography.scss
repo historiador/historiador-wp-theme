@@ -19,33 +19,46 @@ h5,
 h6 {
 	clear: both;
     font-family: $font-family-heading;
-	font-weight: 700;
 	line-height: $line-height-heading;
 }
 
 h1 {
     @include fluid-font-size($font-size-xxxlarge);
+
+    font-weight: 700;
 }
 
-h2,
-.home.blog .entry-title {
+h2 {
     @include fluid-font-size($font-size-xxlarge);
+
+    font-weight: 700;
 }
 
 h3 {
     @include fluid-font-size($font-size-xlarge);
+
+    font-weight: 400;
 }
 
 h4 {
     @include fluid-font-size($font-size-large);
+
+    font-weight: 400;
+    font-style: italic;
 }
 
 h5 {
     @include fluid-font-size($font-size-medium);
+
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 h6 {
     @include fluid-font-size($font-size-small);
+
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 p {
@@ -61,7 +74,7 @@ i {
 }
 
 blockquote {
-    @include fluid-font-size($font-size-medium);
+    @include fluid-font-size($font-size-medium); // TODO do we need to define this again?
 
 	color: $color-base-fg-alt;
 	font-style: italic;
@@ -69,6 +82,20 @@ blockquote {
 	overflow: hidden;
 	padding: 0;
 }
+
+blockquote {
+	quotes: "" "";
+}
+
+q {
+	quotes: "“" "”" "‘" "’";
+}
+
+blockquote:before,
+blockquote:after {
+	content: "";
+}
+
 
 blockquote cite {
 	display: block;
@@ -102,9 +129,10 @@ var {
 }
 
 abbr,
+abbr[title],
 acronym {
-    // TODO review dividers in variables and add here
-	border-bottom: 1px dotted #666;
+	border-bottom: 1px dotted;
+    text-decoration: none;
 	cursor: help;
 }
 
@@ -116,19 +144,6 @@ ins {
 
 big {
 	font-size: 125%;
-}
-
-blockquote {
-	quotes: "" "";
-}
-
-q {
-	quotes: "“" "”" "‘" "’";
-}
-
-blockquote:before,
-blockquote:after {
-	content: "";
 }
 
 :focus {

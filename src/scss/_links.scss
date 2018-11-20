@@ -1,7 +1,6 @@
-// TODO paragraph links should be underlined
-a {
+a { // TODO review paragraph links
 	color: $color-base-link;
-	text-decoration: none;
+	text-decoration: underline;
 
     &:focus {
         outline: thin dotted;
@@ -14,8 +13,8 @@ a {
     }
 }
 
-// TODO what is this mess?
-// TODO simplify everything
+// TODO what is this mess?  Simplify everything.  Will probably remove
+// and refactor.
 
 /* Hover effects */
 

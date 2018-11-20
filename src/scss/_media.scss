@@ -1,3 +1,4 @@
+// NOTE that some of these may never be used because of their niche use.
 img,
 video {
 	height: auto; /* Make sure images are scaled correctly. */
@@ -24,7 +25,7 @@ img.alignright {
 embed,
 iframe,
 object {
-	margin-bottom: 1.5em;
+	margin-bottom: $vertical-rhuthm-1;
 	max-width: 100%;
 }
 
@@ -38,11 +39,11 @@ p > object:only-child {
 
 .wp-caption,
 .gallery-caption {
-	color: #666;
-	font-size: 13px;
-	font-size: 0.8125rem;
+    @include fluid-font-size($font-size-small);
+
 	font-style: italic;
-	margin-bottom: 1.5em;
+    color: $color-base-fg-alt;
+	margin-bottom: $vertical-rhythm-1;
 	max-width: 100%;
 }
 
@@ -53,13 +54,13 @@ p > object:only-child {
 }
 
 .wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+	margin: $space-1 0;
 }
 
 /* Media Elements */
 
 .mejs-container {
-	margin-bottom: 1.5em;
+	margin-bottom: $vertical-rhythm-1;
 }
 
 /* Audio Player */
@@ -74,66 +75,67 @@ p > object:only-child {
 /* Playlist Color Overrides: Light */
 
 .site-content .wp-playlist-light {
-	border-color: #eee;
-	color: #222;
+	border-color: $border-color-light-0; // TODO review these
+	color: $color-base-fg;
 }
 
 .site-content .wp-playlist-light .wp-playlist-current-item .wp-playlist-item-album {
-	color: #333;
+	color: $color-base-fg;
 }
 
 .site-content .wp-playlist-light .wp-playlist-current-item .wp-playlist-item-artist {
-	color: #767676;
+	color: $color-base-fg-alt;
 }
 
-.site-content .wp-playlist-light .wp-playlist-item {
-	border-bottom: 1px dotted #eee;
+.site-content .wp-playlist-light .wp-playlist-item { // TODO review transitions
+	border-bottom: 1px dotted $border-color-light-0;
 	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 }
 
 .site-content .wp-playlist-light .wp-playlist-item:hover,
 .site-content .wp-playlist-light .wp-playlist-item:focus {
-	border-bottom-color: rgba(0, 0, 0, 0);
-	background-color: #767676;
-	color: #fff;
+	border-bottom-color: rgba(0, 0, 0, 0); // TODO review this
+	background-color: $color-base-fg-alt;
+	color: $color-base-bg;
 }
 
+// TODO review these
 .site-content .wp-playlist-light a.wp-playlist-caption:hover,
 .site-content .wp-playlist-light .wp-playlist-item:hover a,
 .site-content .wp-playlist-light .wp-playlist-item:focus a {
-	color: #fff;
+	color: $color-base-bg;
 }
 
 /* Playlist Color Overrides: Dark */
 
 .site-content .wp-playlist-dark {
-	background: #222;
-	border-color: #333;
+	background: $color-base-fg;
+	border-color: $border-color-dark-1;
 }
 
 .site-content .wp-playlist-dark .mejs-container .mejs-controls {
-	background-color: #333;
+	background-color: $color-base-fg-alt;
 }
 
 .site-content .wp-playlist-dark .wp-playlist-caption {
-	color: #fff;
+	color: $color-base-bg;
 }
 
 .site-content .wp-playlist-dark .wp-playlist-current-item .wp-playlist-item-album {
-	color: #eee;
+	color: $color-base-bg-alt;
 }
 
 .site-content .wp-playlist-dark .wp-playlist-current-item .wp-playlist-item-artist {
-	color: #aaa;
+	color: $color-base-bg-alt;
 }
 
 .site-content .wp-playlist-dark .wp-playlist-playing {
-	background-color: #333;
+	background-color: $color-base-fg-alt;
 }
 
-.site-content .wp-playlist-dark .wp-playlist-item {
-	border-bottom: 1px dotted #555;
+.site-content .wp-playlist-dark .wp-playlist-item { // TODO review transitions
+	border-bottom: 1px dotted $border-color-dark-2;
 	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 }
@@ -141,20 +143,21 @@ p > object:only-child {
 .site-content .wp-playlist-dark .wp-playlist-item:hover,
 .site-content .wp-playlist-dark .wp-playlist-item:focus {
 	border-bottom-color: rgba(0, 0, 0, 0);
-	background-color: #aaa;
-	color: #222;
+	background-color: $color-base-bg-alt;
+	color: $color-base-fg;
 }
 
+// TODO review these
 .site-content .wp-playlist-dark a.wp-playlist-caption:hover,
 .site-content .wp-playlist-dark .wp-playlist-item:hover a,
 .site-content .wp-playlist-dark .wp-playlist-item:focus a {
-	color: #222;
+	color: $color-base-fg;
 }
 
 /* Playlist Style Overrides */
 
 .site-content .wp-playlist {
-	padding: 0.625em 0.625em 0.3125em;
+	padding: $space-0;
 }
 
 .site-content .wp-playlist-current-item .wp-playlist-item-title {
@@ -166,15 +169,14 @@ p > object:only-child {
 }
 
 .site-content .wp-playlist-current-item .wp-playlist-item-artist {
-	font-size: 10px;
-	font-size: 0.625rem;
-	font-weight: 800;
-	letter-spacing: 0.1818em;
+    @include fluid-font-size($font-size-small);
+
+	font-weight: 700;
 	text-transform: uppercase;
 }
 
 .site-content .wp-playlist-item {
-	padding: 0 0.3125em;
+	padding: 0 $space-0;
 	cursor: pointer;
 }
 
@@ -183,7 +185,7 @@ p > object:only-child {
 }
 
 .site-content .wp-playlist-item a {
-	padding: 0.3125em 0;
+	padding: $space-0 0;
 	border-bottom: none;
 }
 
@@ -196,7 +198,7 @@ p > object:only-child {
 }
 
 .site-content .wp-playlist-item-length {
-	top: 5px;
+	top: $space-0 / 2; // TODO review this ad hoc measurement
 }
 
 /* SVG Icons base styles */

@@ -1,9 +1,8 @@
-// TODO what is this?
 .site-content-contain {
-	background-color: #fff;
+	background-color: $color-base-bg;
 	position: relative;
 }
 
 .site-content {
-	padding: 2.5em 0 0;
+	padding: $vertical-rhythm-3 0 0;
 }

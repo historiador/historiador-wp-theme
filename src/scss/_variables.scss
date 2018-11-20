@@ -1,74 +1,78 @@
-// TODO document colours
-// fg: #000, #222, #333, #666, #767676, #21759b (accessibility)
-// bg: #fff, #fafafa, #f1f1f1, #eee, #ddd
-// border: #333, #666, #bbb, #0085ba (customizer), rgba(255, 255, 255, 0.6) (header)
+// vi:foldmethod=marker
+
+// Tasks for clean up and optimisation of style sheets {{{
+// -------------------------------------------------------
+// This list has been reviewed on 2018-11-20, marking the relaunch of
+// the development cycle.
 //
-// TODO document white space NOTE it is a mess. Will add new ones.
-// TODO document font sizes
-// TODO document other patterns
-
-
-// TODO consolidate colours
-// TODO consolidate white space
-// TODO consolidare font scale
-
-// TODO convert all `historiador` classes to generic or `historiador`
-
+// None of these is blocking the implementation of the theme on a
+// production environment.  They are, nonetheless, important for
+// streamlining development and making sure everything conforms to a
+// defined set of standards.
+//
+// Recall that we use the "TODO" tag to easily find pending tasks in the
+// various files that make up this theme.  For example, executing grep
+// -R 'TODO' inside a directory will give you a list with them.
+//
+//
+// Tasks regarding the various colours used in the stylesheets:
+//
+//     TODO document colours used for foregrounds, backgrounds, borders
+//     fg: #000, #222, #333, #666, #767676, #21759b (accessibility)
+//     bg: #fff, #fafafa, #f1f1f1, #eee, #ddd
+//     border: #333, #666, #bbb, #0085ba (customizer), rgba(255, 255, 255, 0.6) (header)
+//
+// Tasks regarding scaling and measures:
+//     TODO document white space NOTE it is a mess
+//     TODO document font sizes
+//     TODO document other patterns
+// }}}
 
 // _variables.scss
 // ===============
-//
-// XXX NOTE XXX how variables are named.
-//
-// If it is meant to be used directly in CSS as a property's value, it is as follows:
-// [CSS PROPERTY]-[SCOPE]-[NAME]
-// Examples
-// color: $color-brand-link
-// font-family: $font-family-heading
-//
-// Whereas if the variable is only for internal purposes, it uses the following:
-// [TYPE]-[NAME]-[SCOPE]
-// Examples
-// $font-stack-serif
-// $viewport-size-tablet
-//
-// XXX NOTE XXX Exception to the above are white spacing measures
-// These can be used for padding, margin ...
-// Default to the following convention
-// [DESCRIPTION]-[SCALE INCREMENT]
-// Examples
-// $white-space-0: 0.5rem
-// $white-space-1: 1rem
-//
-// XXX NOTE XXX In defining scales, stick with increments rather than literal names.
-// DO NOT USE, $white-space-half, $white-space-one.
-// It is not good for ad hoc measures.
-// In such cases (which should be avoided), use multiplication or division.
-// Instead of defining, say, $white-space-one-tenth, do $white-space-1 * 0.1
 
 // Colours
 // =======
 
 // Palette
 // -------
-// Naming convention follows UNIX terminal colours
-// colours 0-7 are: black, red, green, yellow, blue, magenta, cyan. white
-// colours 8-15 are their corresponding bright variants
+// Notes on the colours used and their interplay {{{
+// Naming convention follows Linux terminal colours for the first 16
+// escape codes:
 //
-// Base values are bgs: col15, col7 // fgs: col0, col8. Others are accents
-// col0 is base fg, col15 is base bg; col8 and col7 are their alternatives
-// All base values are WCAG AAA compliant (>= 7.79:1)
+// 0-7 are: black, red, green, yellow, blue, magenta, cyan. white
+// 8-15 are their corresponding bright variants
+//
+// "Base values" are black and white variants.  Colour 15 is the default
+// background, while 7 is its alternative.  Colour 0 is the default
+// foeground value, while 8 is its alternative.
+//
+// "Accent values" are all of the remaining 12 colours.
+//
+// All base values are WCAG AAA compliant (>= 7:1) against each other.
 //
 // All accent values are WCAG AAA compliant against col15 (8.25:1)
-// All accent values are WCAG AAA compliant against col7 (7.00:1)
-//
 // All bright accents are WCAG AAA compliant for large sizes against col15 (5.50:1)
+//
+// All accent values are WCAG AAA compliant against col7 (7:1)
 // All bright accents are WCAG AAA compliant for large sizes against col7 (4.70:1)
 //
 // Link colours for body text must have minimum contrast 3:1 against fgs
-// All bright accents qualify
+// All bright accents qualify.  This means that links inside paragraphs
+// or text-heavy sections, must use a bright accent.  To ensure maximum
+// accessibility, they must also be underlined.  Whereas links that have
+// little to no surrounding text can use a non-bright accent value.
 //
-// Any accent is suitable for big text links (except body) or block highlights
+// In terms of colour blindness, the best value for paragraph links is
+// col12 and for other links col4.
+//
+// The rest of the palette can be used to denote actions, highlight
+// elements, etc.  Bear in mind that large blocks can easily use bright
+// accents because these comply with the WCAG AAA standard for point
+// sizes => 18 (24px).
+//
+// Further reading: https://webaim.org
+// }}}
 $color-palette-0: #1a1a1a; // black variant
 $color-palette-1: #a20000; // red variant
 $color-palette-2: #065c08; // green variant
@@ -76,7 +80,7 @@ $color-palette-3: #6c4700; // yellow variant
 $color-palette-4: #0044bb; // blue variant
 $color-palette-5: #960c67; // magenta variant
 $color-palette-6: #005479; // cyan variant
-$color-palette-7: #e7eef7; // white variant
+$color-palette-7: #ecedf0; // white variant
 $color-palette-8: #3c476b; // bright black variant
 $color-palette-9: #cc2222; // bright red variant
 $color-palette-10: #3d7628; // bright green variant
@@ -92,11 +96,18 @@ $color-base-bg: $color-palette-15;
 $color-base-bg-alt: $color-palette-7;
 $color-base-fg: $color-palette-0;
 $color-base-fg-alt: $color-palette-8;
-// TODO base link for body as col4 is not 3:1 against col0
-$color-base-link: $color-palette-4;
-$color-base-link-alt: $color-palette-5;
+$color-base-link: $color-palette-12;
+$color-base-link-alt: $color-palette-13;
 
-// TODO get colours from LIVRE(?)
+// Links used in places with little to no surround text (see the need
+// for a 3:1 contrast between links and the base foreground.
+$color-extra-link: $color-palette-4;
+$color-extra-link-alt: $color-palette-5;
+
+// TODO get colours from LIVRE?
+// TODO consult Rui on his preferences
+// TODO ask the team what would be best for the campaign
+//
 // // Brand colours
 // // -------------
 // $color-brand-bg: #;
@@ -109,12 +120,27 @@ $color-base-link-alt: $color-palette-5;
 
 // Font stacks
 // -----------
-// See `webfonts.css` for custom web fonts
-// See `gulpfile.js` gulp task `webfonts` for building said style sheet
-// The font files are locates under assets/fonts
+// Notes on the font stacks {{{
+// See `webfonts.css` for custom web fonts.  See `gulpfile.js` gulp task
+// `webfonts` for building said style sheet.  The font files are locates
+// under assets/fonts.
+//
 // Use this website to get fonts from the google fonts repos:
 // https://google-webfonts-helper.herokuapp.com/
-// The webfonts used are Roboto (300, 400, 400i, 700, 700i)
+//
+// The webfonts used are Roboto (300, 400, 400i, 700, 700i).  Note
+// though that only the latin subset is provided.
+// TODO research need for more subsets, e.g. latin extended, greek…
+//
+// The reason for selecting Roboto is purely practical: to the untrained
+// eye it looks just like "the standard" sans-serif font.  But more
+// importantly, any character that is not provided by the web fonts we
+// load will not look out of place (say, if the system loads a greek
+// letter from Helvetica).
+//
+// TODO do we use emoji?  We might need to include a reference in the
+// stack.
+// }}}
 $font-stack-serif: 'Times New Roman', Times, serif;
 $font-stack-sans: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 $font-stack-mono: Consolas, Monaco, monospace;
@@ -126,25 +152,33 @@ $font-family-code: $font-stack-mono;
 
 // Font scale
 // ----------
-// We use a font scale to achieve a vertical rhythm
-// The text is our measure for the entire site layout
-
-// these are the operations that derive the scale
-// n * x
-// n / x
-// where `n` is the incremented/decremented base value
-// where `x` is the ratio
+// Notes on the font scale {{{
+// We use a font scale to achieve a vertical rhythm.  The text is our
+// measure for the entire site layout.  Personally, I have found that
+// simple designs only need a html { font-size: 100% } with no
+// viewport-aware font scaling (no media queries).  If 1rem = 100%, then
+// the scales are defined in rem and everything zooms in/out smoothly.
+// This respects the user's choice to set a default font size in their
+// browser settings.
 //
-// some common ratios, followed by their conventional name:
-// 1.067 minor second
-// 1.125 major second
-// 1.2 minor third
-// 1.25 major third
-// see http://www.modularscale.com
+// That granted, the de facto standard is 1rem = 16px.  We try to make
+// scaling media-aware only when necessary.
 //
-// Using major second
-// Good proportions
-// No major discrepencies at scale
+// These are the operations that derive the scale:
+//     n * x
+//     n / x
+// where `n` is the {in,de}cremented base value and `x` the ratio.
+//
+// Some common ratios, followed by their conventional name:
+//     1.067     minor second
+//     1.125     major second
+//     1.2       minor third
+//     1.25      major third
+// See http://www.modularscale.com
+//
+// Here we are using major second.  It has proportions that do not
+// create major discrepencies at scale.
+// }}}
 
 // Font sizes
 // ----------
@@ -162,7 +196,7 @@ $font-size-xxxlarge: 1.602rem;
 
 // Typographic spacing
 // -------------------
-$font-size-base: 16px;
+$font-size-base: 100%; // Use 16px if you want to develop on the de facto standard
 $line-height-body: 1.424;
 $line-height-heading: 1.125;
 
@@ -173,6 +207,8 @@ $space-1: 1rem;
 $space-2: 2rem;
 $space-3: 3rem;
 
+// TODO is this a good way to derive the scale?
+// We can just hard code it.
 $vertical-rhythm-0: #{$line-height-body / 2}rem;
 $vertical-rhythm-1: #{$line-height-body}rem;
 $vertical-rhythm-2: #{$line-height-body * 1.5}rem;
@@ -181,6 +217,7 @@ $vertical-rhythm-4: #{$line-height-body * 3.5}rem;
 
 // Page measure
 // ------------
+// TODO review these
 $viewport-measure: 36rem;
 $viewport-measure-xl: $viewport-measure + 6;
 
@@ -195,8 +232,7 @@ $viewport-size-desktop: 75em;
 $border-width-thin: 1px;
 $border-width-medium: 3px;
 $border-width-thick: 5px;
-// NOTE Minimum contrast of WCAG AAA against col15 and brand-bg
-// TODO Review based on actual colours
+// NOTE Minimum contrast of WCAG AAA against col15
 $border-color-dark-0: #111;
 $border-color-dark-1: #333;
 $border-color-dark-2: #555;
@@ -206,24 +242,12 @@ $border-color-light-2: #bababa;
 // $border-color-highlight: $notifyinfo;
 // $border-color-highlight-alt: $notifycrit;
 
-
 // Mixins
 // ------
 
-// TODO review this based on styles from Historiador
 @mixin font-smoothing {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-// TODO review this based on styles from Historiador
-@mixin radius($degree) {
-    border-radius: $degree;
-}
-
-// TODO review this based on styles from Historiador
-@mixin transition {
-    transition: all ease-in-out 300ms;
 }
 
 @mixin tablet {
@@ -259,6 +283,7 @@ $border-color-light-2: #bababa;
     font-size: $fluid-font-size;
 }
 
+// For icon fonts.  Should use same value as the text next to it.
 @mixin tablet-icon-size($tablet-icon-size) {
     width: $tablet-icon-size + 0.02;
     height: $tablet-icon-size + 0.02;
@@ -291,12 +316,13 @@ $border-color-light-2: #bababa;
     @include desktop {
         max-width: $measure-xl;
     }
+
     max-width: 100%;
 }
 
 // Global placeholders
-// Placeholders are normally defined within the stylesheet => DRY
-// -----------------------------------------------------------------------------
+// -------------------
+// NOTE Placeholders are normally defined within the stylesheet => DRY
 %clearfix {
     &::before {
         content: '';
