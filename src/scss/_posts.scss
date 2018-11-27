@@ -8,7 +8,7 @@
 	display: none;
 }
 
-.sticky .icon-thumb-tack {
+.sticky .icon-thumb-tack { // TODO review this
 	display: block;
 	height: 18px;
 	left: -1.5em;
@@ -20,22 +20,19 @@
 .page .panel-content .entry-title,
 .page-title,
 body.page:not(.historiador-front-page) .entry-title {
-	color: #222;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: 800;
-	letter-spacing: 0.14em;
-	text-transform: uppercase;
+    @include fluid-font-size($font-size-small);
+	color: $color-base-fg;
+	font-weight: 700;
 }
 
 .entry-header .entry-title {
-	margin-bottom: 0.25em;
+	margin-bottom: $space-0 / 2; // TODO review ad hoc measurement
 }
 
 .entry-title a {
-	color: #333;
+	color: $color-extra-link;
 	text-decoration: none;
-	margin-left: -2px;
+	margin-left: -2px; // TODO why this?
 }
 
 .entry-title:not(:first-child) {
@@ -43,41 +40,39 @@ body.page:not(.historiador-front-page) .entry-title {
 }
 
 .entry-meta {
-	color: #767676;
-	font-size: 11px;
-	font-size: 0.6875rem;
-	font-weight: 800;
-	letter-spacing: 0.1818em;
-	padding-bottom: 0.25em;
-	text-transform: uppercase;
+    @include fluid-font-size($font-size-xxsmall);
+
+	color: $color-base-fg-alt;
+	font-weight: 700;
+	padding-bottom: $space-0 / 2; // TODO review ad hoc measurement
 }
 
 .entry-meta a {
-	color: #767676;
+	color: $color-extra-link;
 }
 
 .byline,
-.updated:not(.published) {
+.updated:not(.published) { // TODO will there be many authors?  Else remove bylines.
 	display: none;
 }
 
 .single .byline,
-.group-blog .byline {
+.group-blog .byline { // TODO review need for bylines.
 	display: inline;
 }
 
 .pagination,
 .comments-pagination {
-	border-top: 1px solid #eee;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: 800;
-	padding: 2em 0 3em;
+    @include fluid-font-size($font-size-small);
+
+	border-top: 1px solid $border-color-dark-2;
+	font-weight: 700;
+	padding: $space-2 0;
 	text-align: center;
 }
 
 .pagination .icon,
-.comments-pagination .icon {
+.comments-pagination .icon { // TODO why this specific size?
 	width: 0.666666666em;
 	height: 0.666666666em;
 }
@@ -88,10 +83,10 @@ body.page:not(.historiador-front-page) .entry-title {
 
 .page-numbers {
 	display: none;
-	padding: 0.5em 0.75em;
+	padding: $space-0 $space-1;
 }
 
-.page-numbers.current {
+.page-numbers.current { // TODO review pagination current styles, contingent on the rest of the styles below
 	color: #767676;
 	display: inline-block;
 }
@@ -117,7 +112,7 @@ body.page:not(.historiador-front-page) .entry-title {
 }
 
 .prev.page-numbers,
-.next.page-numbers {
+.next.page-numbers { // TODO review transitions
 	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
 }
@@ -142,10 +137,10 @@ body.page:not(.historiador-front-page) .entry-title {
 /* Aligned blockquotes */
 
 .entry-content blockquote.alignleft,
-.entry-content blockquote.alignright {
-	color: #666;
-	font-size: 13px;
-	font-size: 0.8125rem;
+.entry-content blockquote.alignright { // TODO will we be using those?
+    @include fluid-font-size($font-size-small);
+
+	color: $color-base-fg-alt;
 	width: 48%;
 }
 
@@ -154,11 +149,11 @@ body.page:not(.historiador-front-page) .entry-title {
 .blog .site-main > article,
 .archive .site-main > article,
 .search .site-main > article {
-	padding-bottom: 2em;
+	padding-bottom: $vertical-rhythm-1;
 }
 
 body:not(.historiador-front-page) .entry-header {
-	padding: 1em 0;
+	padding: $space-1 0;
 }
 
 body:not(.historiador-front-page) .entry-header,
@@ -175,9 +170,9 @@ body:not(.historiador-front-page) .entry-header {
 .blog .entry-meta a.post-edit-link,
 .archive .entry-meta a.post-edit-link,
 .search .entry-meta a.post-edit-link {
-	color: #222;
+	color: $color-base-fg;
 	display: inline-block;
-	margin-left: 1em;
+	margin-left: $space-1;
 	white-space: nowrap;
 }
 
@@ -187,9 +182,9 @@ body:not(.historiador-front-page) .entry-header {
 }
 
 .taxonomy-description {
-	color: #666;
-	font-size: 13px;
-	font-size: 0.8125rem;
+    @include fluid-font-size($font-size-small);
+
+	color: $color-base-fg-alt;
 }
 
 /* More tag */
@@ -197,7 +192,7 @@ body:not(.historiador-front-page) .entry-header {
 .entry-content .more-link:before {
 	content: "";
 	display: block;
-	margin-top: 1.5em;
+	margin-top: $vertical-rhythm-1;
 }
 
 /* Single Post */
@@ -208,12 +203,12 @@ body:not(.historiador-front-page) .entry-header {
 .archive.page-one-column:not(.has-sidebar) #primary {
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 740px;
+	max-width: 740px; // TODO review this based on measure length
 }
 
 .single-featured-image-header {
-	background-color: #fafafa;
-	border-bottom: 1px solid #eee;
+	background-color: $color-base-bg-alt;
+	border-bottom: 1px solid $border-color-light-0;
 }
 
 .single-featured-image-header img {
@@ -222,16 +217,16 @@ body:not(.historiador-front-page) .entry-header {
 }
 
 .page-links {
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: 800;
-	padding: 2em 0 3em;
+    @include fluid-font-size($font-size-small);
+
+	font-weight: 700;
+	padding: $space-2 0;
 }
 
 .page-links .page-number {
-	color: #767676;
+	color: $color-base-fg-alt; // TODO review in accordance with the rest of pagination styles
 	display: inline-block;
-	padding: 0.5em 1em;
+	padding: $space-0 $space-1;
 }
 
 .page-links a {
@@ -239,44 +234,43 @@ body:not(.historiador-front-page) .entry-header {
 }
 
 .page-links a .page-number {
-	color: #222;
+	color: $color-base-fg; // TODO review in accordance with the rest of pagination styles
 }
 
 /* Entry footer */
 
 .entry-footer {
-	border-bottom: 1px solid #eee;
-	border-top: 1px solid #eee;
-	margin-top: 2em;
-	padding: 2em 0;
+	border-bottom: 1px solid $border-color-dark-2;
+	border-top: 1px solid $border-color-dark-2;
+	margin-top: $space-2;
+	padding: $space-2 0;
 }
 
 .entry-footer .cat-links,
 .entry-footer .tags-links {
+    @include fluid-font-size($font-size-xsmall);
+
 	display: block;
-	font-size: 11px;
-	font-size: 0.6875rem;
-	font-weight: 800;
-	letter-spacing: 0.1818em;
-	padding-left: 2.5em;
+	font-weight: 700;
+	padding-left: $space-3;
 	position: relative;
 	text-transform: uppercase;
 }
 
 .entry-footer .cat-links + .tags-links {
-	margin-top: 1em;
+	margin-top: $space-1;
 }
 
 .entry-footer .cat-links a,
 .entry-footer .tags-links a {
-	color: #333;
+	color: $color-extra-link;
 }
 
 .entry-footer .cat-links .icon,
 .entry-footer .tags-links .icon {
-	color: #767676;
+	color: $color-base-fg-alt;
 	left: 0;
-	margin-right: 0.5em;
+	margin-right: $space-0;
 	position: absolute;
 	top: 2px;
 }
@@ -286,29 +280,27 @@ body:not(.historiador-front-page) .entry-header {
 }
 
 .entry-footer .edit-link a.post-edit-link {
-	background-color: #222;
-	-webkit-border-radius: 2px;
+    @include fluid-font-size($font-size-small);
+
+	background-color: $color-base-bg;
 	border-radius: 2px;
-	-webkit-box-shadow: none;
 	box-shadow: none;
-	color: #fff;
+	color: $color-base-fg;
 	display: inline-block;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: 800;
-	margin-top: 2em;
-	padding: 0.7em 2em;
-	-webkit-transition: background-color 0.2s ease-in-out;
-	transition: background-color 0.2s ease-in-out;
+	font-weight: 700;
+	margin-top: $vertical-rhythm-1;
+	padding: $space-1 $space-2;
 	white-space: nowrap;
 }
 
 .entry-footer .edit-link a.post-edit-link {
     &:hover,
     &:focus {
-        background-color: #767676;
+        background-color: $color-base-bg-alt;
     }
 }
+
+// TODO any chance we will be using those?  Remove them from here.
 
 /* Post Formats */
 
@@ -320,9 +312,9 @@ body:not(.historiador-front-page) .entry-header {
 }
 
 .format-quote blockquote {
-	color: #333;
-	font-size: 20px;
-	font-size: 1.25rem;
+    @include fluid-font-size($font-size-large);
+
+	color: $color-base-fg;
 	font-weight: 300;
 	overflow: visible;
 	position: relative;
@@ -343,39 +335,39 @@ body:not(.historiador-front-page) .entry-header {
 /* Post Navigation */
 
 .post-navigation {
-	font-weight: 800;
-	margin: 3em 0;
+	font-weight: 700;
+	margin: $vertical-rhythm-2 0;
 }
 
 .post-navigation .nav-links {
-	padding: 1em 0;
+	padding: $space-1 0;
 }
 
 .nav-subtitle {
+    @include fluid-font-size($font-size-xsmall);
+
 	background: transparent;
-	color: #767676;
+	color: $color-base-fg-alt;
 	display: block;
-	font-size: 11px;
-	font-size: 0.6875rem;
-	letter-spacing: 0.1818em;
 	margin-bottom: 1em;
 	text-transform: uppercase;
 }
 
 .nav-title {
-	color: #333;
-	font-size: 15px;
-	font-size: 0.9375rem;
+    @include fluid-font-size($font-size-medium);
+
+	color: $color-base-fg;
 }
 
 .post-navigation .nav-next {
-	margin-top: 1.5em;
+	margin-top: $vertical-rhythm-1;
 }
 
+// TODO why these overly specific selectors?  Improve!
 .nav-links .nav-previous .nav-title .nav-title-icon-wrapper {
-	margin-right: 0.5em;
+	margin-right: $space-0;
 }
 
 .nav-links .nav-next .nav-title .nav-title-icon-wrapper {
-	margin-left: 0.5em;
+	margin-left: $space-0;
 }

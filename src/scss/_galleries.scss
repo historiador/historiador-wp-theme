@@ -1,9 +1,13 @@
+// TODO this is taken from upstream Twenty Eighteen.  If we do not use
+// galleries and have no such plans we can just remove them.  By the
+// way, "removing" can be done in style.scss by commenting out the
+// directive for importing this partial stylesheet.
 .gallery-item {
 	display: inline-block;
 	text-align: left;
 	vertical-align: top;
-	margin: 0 0 1.5em;
-	padding: 0 1em 0 0;
+	margin: 0 0 $space-2;
+	padding: 0 $space-1 0 0;
 	width: 50%;
 }
 
@@ -28,7 +32,7 @@
 	max-width: 100%;
 }
 
-.gallery-item a img {
+.gallery-item a img { // TODO review the transitions, if this partial will be used
 	display: block;
 	-webkit-transition: -webkit-filter 0.2s ease-in;
 	transition: -webkit-filter 0.2s ease-in;
@@ -47,6 +51,6 @@
 .gallery-caption {
 	display: block;
 	text-align: left;
-	padding: 0 10px 0 0;
+	padding: 0 $space-0 0 0;
 	margin-bottom: 0;
 }

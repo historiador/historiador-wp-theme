@@ -1,17 +1,15 @@
+// TODO consider brand colours in variables and include herein
 #masthead .wrap {
 	position: relative;
 }
 
-// TODO consider brand colours in variables and include herein
 .site-header {
-	background-color: #fafafa;
+	background-color: $color-base-fg-alt;
 	position: relative;
 }
 
-
-// TODO what exactly is this?
 /* Site branding */
-.site-branding {
+.site-branding { // TODO review
 	padding: 1em 0;
 	position: relative;
 	-webkit-transition: margin-bottom 0.2s;
@@ -30,44 +28,39 @@
     }
 }
 
-.site-title {
+.site-title { // TODO also check effects with site-title a
+    @include fluid-font-size($font-size-xxxlarge);
+
 	clear: none;
-	font-size: $font-size-xxxlarge;
 	font-weight: 700;
 	line-height: $line-height-heading;
 	padding: 0;
 	margin: 0;
-}
-
-// TODO brand colours. Also nest this inside the above
-.site-title,
-.site-title a {
-	color: #222;
-	opacity: 1; /* Prevent opacity from changing during selective refreshes in the customize preview */
+    opacity: 1;
 }
 
 // TODO test with image/video header
-// TODO standardise colours
 body.has-header-image,
 body.has-header-video {
     .site-title {
-        color: #fff;
+        color: $color-base-bg;
 
         a {
-            color: #fff;
+            color: $color-base-bg;
         }
 
     }
 
     .site-description {
-        color: #ccc;
+        color: $color-base-bg-alt;
     }
 }
 
 // TODO brand colours fg alt
 .site-description {
-	color: #666;
-	font-size: $font-size-small;
+    @include fluid-font-size($font-size-small);
+
+	color: $color-base-fg-alt;
 	margin-bottom: 0;
 }
 
@@ -76,26 +69,26 @@ body.has-header-video {
 	padding-right: $space-1;
 	vertical-align: middle;
 	width: auto;
+
+    img {
+        display: inline-block;
+        max-height: 80px;
+        width: auto;
+    }
+
+    a {
+        &:hover,
+        &:focus {
+            opacity: 0.9; // TODO no opacity. Use alt col. Test first.
+        }
+    }
 }
 
-.custom-logo-link img {
-	display: inline-block;
-	max-height: 80px;
-	width: auto;
-}
-
+// TODO this whole selector is ugly. Review.
 body.home.title-tagline-hidden.has-header-image .custom-logo-link img,
 body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 	max-height: 200px;
 	max-width: 100%;
-}
-
-// TODO no opacity. Find a better style
-.custom-logo-link a {
-    &:hover,
-    &:focus {
-        opacity: 0.9;
-    }
 }
 
 body:not(.title-tagline-hidden) .site-branding-text {
@@ -103,10 +96,9 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	vertical-align: middle;
 }
 
-// XXX TODO XXX everything beyond this point needs review
-// Might keep it in tact, or adapt to changes made above
-// These probably relate to the WP customiser
-
+// XXX TODO XXX everything beyond this point needs review.  Might keep
+// it in tact, or adapt to changes made above.  These probably relate to
+// the WP customiser.
 .custom-header {
 	position: relative;
 }

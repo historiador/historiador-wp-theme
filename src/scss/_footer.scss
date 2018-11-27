@@ -1,8 +1,6 @@
-// TODO consider brand colours for footer
-// This would apply to all definitions in this stylesheet
+// TODO we should use "brand colours" for the footer
 .site-footer {
-    // TODO review dividers in variables and edit this
-	border-top: 1px solid #eee;
+	border-top: 1px solid $border-color-dark-2;
 
     .wrap {
         padding-bottom: $vertical-rhythm-0;
@@ -30,40 +28,47 @@
     }
 
     a {
-        background-color: #767676;
+        background-color: $color-base-fg-alt;
         -webkit-border-radius: 40px;
         border-radius: 40px;
-        color: #fff;
+        color: $color-base-bg;
         display: inline-block;
-        height: 40px;
-        margin: 0 1em 0.5em 0;
-        text-align: center;
         width: 40px;
+        height: 40px;
+        margin: 0 1em 0.5em 0; // TODO review
+        text-align: center;
 
         &:hover,
         &:focus {
-            background-color: #333;
+            background-color: $color-base-link-alt; // TODO review
         }
     }
 
-    // TODO add fluid icon sizes in variables and include here
-    .icon {
+    .icon { // TODO review
+        width: 16px;
         height: 16px;
         top: 12px;
-        width: 16px;
         vertical-align: top;
     }
 }
 
 .site-info {
-	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: $font-size-small;
 	margin-bottom: 1em;
 
+    // No need to define links here, especially if they follow the
+    // general styling norms.  TODO move to _links.scss and/or
+    // delete/adapt accordingly.
     a {
-        color: #666;
+        color: $color-extra-link;
+
+        &:hover,
+        &:focus {
+            color: $color-extra-link-alt;
+        }
     }
 
+    // TODO remove these in the html/templates, then here
     .sep {
         margin: 0;
         display: block;
@@ -76,7 +81,6 @@
         padding: 0 0.2em 0 0.4em;
     }
 
-    // TODO what is this? FontAwesome glyph?
     span[role=separator]::before {
         content: '\002f';
     }
