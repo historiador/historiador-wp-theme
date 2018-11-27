@@ -32,6 +32,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
+const replace = require('gulp-replace');
 
 // SCSS => CSS
 // -----------
@@ -42,6 +43,8 @@ const rename = require('gulp-rename');
 gulp.task('style', function() {
     gulp.src('src/scss/style.scss')
 		.pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+		.pipe(replace('/*!', '/*'))
+		.pipe(replace('*/html', '*/\nhtml'))
 		.pipe(gulp.dest('.'));
 });
 
@@ -115,5 +118,5 @@ gulp.task('img', function() {
 // TODO develop this
 // // Watch task
 // gulp.task('default',function() {
-// gulp.watch('src/scss/**/*.scss',['style']);
+// 	gulp.watch('src/scss/**/*.scss',['style']);
 // });
