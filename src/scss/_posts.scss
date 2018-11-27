@@ -40,7 +40,7 @@ body.page:not(.historiador-front-page) .entry-title {
 }
 
 .entry-meta {
-    @include fluid-font-size($xxssize);
+    @include fluid-font-size($font-size-xxsmall);
 
 	color: $color-base-fg-alt;
 	font-weight: 700;
@@ -63,7 +63,7 @@ body.page:not(.historiador-front-page) .entry-title {
 
 .pagination,
 .comments-pagination {
-    @include fluid-font-size($ssize);
+    @include fluid-font-size($font-size-small);
 
 	border-top: 1px solid $border-color-dark-2;
 	font-weight: 700;

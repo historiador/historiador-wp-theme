@@ -86,7 +86,7 @@ h2.widget-title { // TODO why is it okay to (i) use h2, (ii) redefine the headin
 
 .widget .post-date,
 .widget .rss-date {
-    @include fluid-font-size($font-size-xsize);
+    @include fluid-font-size($font-size-xsmall);
 }
 
 /* Text widget */
