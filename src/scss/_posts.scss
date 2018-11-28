@@ -187,7 +187,7 @@ body:not(.historiador-front-page) .entry-header {
 }
 
 .taxonomy-description {
-    @include fluid-font-size($font-size-small);
+    @include fluid-font-size($font-size-medium);
 
 	color: $color-base-fg-alt;
 }
