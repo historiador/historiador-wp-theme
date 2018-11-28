@@ -264,17 +264,6 @@ function historiador_content_width() {
 add_action( 'template_redirect', 'historiador_content_width', 0 );
 
 /**
- * Register self-hosted fonts
- */
-function historiador_hosted_fonts() {
-	wp_register_style(
-		'historiador-hosted-webfonts', // handle name
-		get_template_directory_uri() . 'webfonts.min.css', // the URL of the stylesheet
-		'1.0', // version number
-	);
-}
-
-/**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
@@ -465,7 +454,7 @@ add_action( 'wp_head', 'historiador_colors_css_wrap' );
  */
 function historiador_scripts() {
 	// Webfont stylesheet.
-	wp_enqueue_style( 'historiador-hosted-webfonts' );
+	wp_enqueue_style( 'historiador-webfonts', get_theme_file_uri( 'webfonts.min.css' ), array( 'historiador-style' ), '1.0' );
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'historiador-style', get_stylesheet_uri() );
