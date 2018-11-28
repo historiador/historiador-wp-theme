@@ -1,4 +1,6 @@
 #secondary {
+	@include fluid-font-size($font-size-small);
+
 	padding: $space-1 0 $space-2;
 }
 
@@ -7,7 +9,7 @@
 }
 
 h2.widget-title { // TODO why is it okay to (i) use h2, (ii) redefine the heading?
-	@include fluid-font-size($font-size-small);
+	@include fluid-font-size($font-size-medium);
 
 	margin-bottom: $vertical-rhythm-1;
 }
