@@ -39,11 +39,11 @@
     opacity: 1;
 }
 
-// TODO test with image/video header
 body.has-header-image,
 body.has-header-video {
     .site-title {
-        color: $color-base-bg;
+		color: $color-base-bg;
+		text-shadow: 1px 1px $color-base-fg;
 
         a {
             color: $color-base-bg;
@@ -52,7 +52,8 @@ body.has-header-video {
     }
 
     .site-description {
-        color: $color-base-bg-alt;
+		color: $color-base-bg-alt;
+		text-shadow: 1px 1px $color-base-fg;
     }
 }
 
@@ -94,6 +95,8 @@ body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
 body:not(.title-tagline-hidden) .site-branding-text {
 	display: inline-block;
 	vertical-align: middle;
+	background: rgba(0,0,0,.4); // TODO requires further testing.
+	padding: $space-1;
 }
 
 // XXX TODO XXX everything beyond this point needs review.  Might keep
