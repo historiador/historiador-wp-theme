@@ -112,7 +112,7 @@ function historiador_customize_register( $wp_customize ) {
 	 *
 	 * @param int $num_sections Number of front page sections.
 	 */
-	$num_sections = apply_filters( 'historiador_front_page_sections', 4 );
+	$num_sections = apply_filters( 'historiador_front_page_sections', 8 );
 
 	// Create a setting and control for each of the sections available in the theme.
 	for ( $i = 1; $i < ( 1 + $num_sections ); $i++ ) {
