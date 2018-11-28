@@ -20,9 +20,9 @@
 .page .panel-content .entry-title,
 .page-title,
 body.page:not(.historiador-front-page) .entry-title {
-    @include fluid-font-size($font-size-small);
+    @include fluid-font-size($font-size-xxlarge);
 	color: $color-base-fg;
-	font-weight: 700;
+	font-weight: 400;
 }
 
 .entry-header .entry-title {
