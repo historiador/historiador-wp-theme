@@ -141,9 +141,9 @@ $color-extra-link-alt: $color-palette-5;
 // TODO do we use emoji?  We might need to include a reference in the
 // stack.
 // }}}
-$font-stack-serif: 'Times New Roman', Times, serif;
-$font-stack-sans: Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-$font-stack-mono: Consolas, Monaco, monospace;
+$font-stack-serif: 'Times New Roman', Times, 'Liberation Serif', serif;
+$font-stack-sans: 'FiraGO', 'Fira Sans', Roboto, Helvetica, Arial, sans-serif;
+$font-stack-mono: 'Hack alt', 'Hack', Monaco, Consolas, 'Ubuntu Mono', monospace;
 
 $font-family-body: $font-stack-sans;
 $font-family-heading: $font-stack-sans;
