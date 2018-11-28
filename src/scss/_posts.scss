@@ -315,7 +315,6 @@ body:not(.historiador-front-page) .entry-header {
     @include fluid-font-size($font-size-large);
 
 	color: $color-base-fg;
-	font-weight: 300;
 	overflow: visible;
 	position: relative;
 }
