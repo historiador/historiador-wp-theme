@@ -454,7 +454,7 @@ add_action( 'wp_head', 'historiador_colors_css_wrap' );
  */
 function historiador_scripts() {
 	// Webfont stylesheet.
-	wp_enqueue_style( 'historiador-webfonts', get_theme_file_uri( 'webfonts.min.css' ), array( 'historiador-style' ), '1.20181128171917' );
+	wp_enqueue_style( 'historiador-webfonts', get_theme_file_uri( 'webfonts.min.css' ), array( 'historiador-style' ), '1.20181128174405' );
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'historiador-style', get_stylesheet_uri() );
