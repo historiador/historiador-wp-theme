@@ -14,14 +14,15 @@
 
 .navigation-top a {
 	color: $color-base-fg; // TODO why not an accent colour, ideally brand-link that is blue, but not too much
-	font-weight: 700;
+	font-weight: 400;
 	-webkit-transition: color 0.2s; // TODO review transitions
 	transition: color 0.2s;
 }
 
 .navigation-top .current-menu-item > a,
 .navigation-top .current_page_item > a {
-	color: #767676; // TODO find better way to style current item
+	color: $color-extra-link-alt;
+	font-weight: 700;
 }
 
 .main-navigation {
@@ -89,7 +90,7 @@
 }
 
 .main-navigation a:hover {
-	color: #767676; // TODO review colors for nav links
+	color: $color-extra-link-alt;
 }
 
 /* Menu toggle */
