@@ -3,21 +3,13 @@
 }
 
 .widget {
-	padding-bottom: 3em;
+	padding-bottom: $vertical-rhythm-2;
 }
 
 h2.widget-title { // TODO why is it okay to (i) use h2, (ii) redefine the heading?
-	color: #222;
-	font-size: 13px;
-	font-size: 0.8125rem;
-	font-weight: 800;
-	letter-spacing: 0.1818em;
-	margin-bottom: 1.5em;
-	text-transform: uppercase;
-}
+	@include fluid-font-size($font-size-small);
 
-.widget-title a {
-	color: inherit;
+	margin-bottom: $vertical-rhythm-1;
 }
 
 /* widget forms */
