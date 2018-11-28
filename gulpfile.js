@@ -48,24 +48,25 @@ gulp.task('style', function() {
 		.pipe(gulp.dest('.'));
 });
 
-// PostCSS
-// -------
-// Parsing of scss partials for vendor prefixes, style and flexbox fixes
-// Also see `.stylelintrc` at the root directory of this project
-gulp.task('postcss', function () {
-	var postcss = require('gulp-postcss');
-	var scss = require('postcss-scss');
-	var flexbugs = require('postcss-flexbugs-fixes');
-	var autoprefixer = require('autoprefixer');
-	var stylelint = require('stylelint');
-	var stylefmt = require('stylefmt');
-
-	var plugins = [flexbugs(), autoprefixer(), stylelint(), stylefmt()];
-
-    return gulp.src('src/scss/**/*.scss')
-		.pipe(postcss(plugins, {syntax: scss}))
-        .pipe(gulp.dest('src/scss'));
-});
+// NOTE has not been tested yet.
+///// // PostCSS
+///// // -------
+///// // Parsing of scss partials for vendor prefixes, style and flexbox fixes
+///// // Also see `.stylelintrc` at the root directory of this project
+///// gulp.task('postcss', function () {
+///// 	var postcss = require('gulp-postcss');
+///// 	var scss = require('postcss-scss');
+///// 	var flexbugs = require('postcss-flexbugs-fixes');
+///// 	var autoprefixer = require('autoprefixer');
+///// 	var stylelint = require('stylelint');
+///// 	var stylefmt = require('stylefmt');
+///// 
+///// 	var plugins = [flexbugs(), autoprefixer(), stylelint(), stylefmt()];
+///// 
+/////     return gulp.src('src/scss/**/*.scss')
+///// 		.pipe(postcss(plugins, {syntax: scss}))
+/////         .pipe(gulp.dest('src/scss'));
+///// });
 
 // Prepare JS
 // ----------
@@ -96,24 +97,25 @@ gulp.task('webfonts', function() {
 		.pipe(gulp.dest('.'));
 });
 
-// Minify images
-// -------------
-gulp.task('img', function() {
-	var imagemin = require('gulp-imagemin');
-
-    return gulp.src('assets/images/**/*')
-		.pipe(imagemin([
-			imagemin.jpegtran({progressive: true}),
-			imagemin.optipng({optimizationLevel: 5}),
-			imagemin.svgo({
-				plugins: [
-					{removeViewBox: true},
-					{cleanupIDs: false}
-				]
-			})
-		]))
-        .pipe(gulp.dest('assets/images'));
-});
+// NOTE has not been tested yet
+//// // Minify images
+//// // -------------
+//// gulp.task('img', function() {
+//// 	var imagemin = require('gulp-imagemin');
+//// 
+////     return gulp.src('assets/images/**/*')
+//// 		.pipe(imagemin([
+//// 			imagemin.jpegtran({progressive: true}),
+//// 			imagemin.optipng({optimizationLevel: 5}),
+//// 			imagemin.svgo({
+//// 				plugins: [
+//// 					{removeViewBox: true},
+//// 					{cleanupIDs: false}
+//// 				]
+//// 			})
+//// 		]))
+////         .pipe(gulp.dest('assets/images'));
+//// });
 
 // TODO develop this
 // // Watch task
