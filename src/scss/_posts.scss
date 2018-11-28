@@ -17,22 +17,28 @@
 	width: 20px;
 }
 
-.page .panel-content .entry-title,
 .page-title,
 body.page:not(.historiador-front-page) .entry-title {
-    @include fluid-font-size($font-size-xxlarge);
+    @include fluid-font-size($font-size-xxxlarge);
+
+	color: $color-base-fg;
+	font-weight: 400;
+}
+
+.page .panel-content .entry-title {
+	@include fluid-font-size($font-size-large);
+
 	color: $color-base-fg;
 	font-weight: 400;
 }
 
 .entry-header .entry-title {
-	margin-bottom: $space-0 / 2; // TODO review ad hoc measurement
+	margin-bottom: $vertical-rhythm-1;
 }
 
 .entry-title a {
 	color: $color-extra-link;
 	text-decoration: none;
-	margin-left: -2px; // TODO why this?
 }
 
 .entry-title:not(:first-child) {
@@ -40,15 +46,14 @@ body.page:not(.historiador-front-page) .entry-title {
 }
 
 .entry-meta {
-    @include fluid-font-size($font-size-xxsmall);
+    @include fluid-font-size($font-size-xsmall);
 
 	color: $color-base-fg-alt;
-	font-weight: 700;
-	padding-bottom: $space-0 / 2; // TODO review ad hoc measurement
+	font-weight: 400;
 }
 
 .entry-meta a {
-	color: $color-extra-link;
+	color: $color-base-fg-alt;
 }
 
 .byline,
