@@ -110,9 +110,9 @@ function historiador_setup() {
 
 	/*
 	 * This theme styles the visual editor to resemble the theme style,
-	 * specifically font, colors, and column width.
+	 * specifically colors, and column width.
 	  */
-	add_editor_style( array( 'assets/css/editor-style.css', historiador_fonts_url() ) );
+	add_editor_style( array( 'assets/css/editor-style.css' ) );
 
 	// Define and register starter content to showcase the theme on new sites.
 	$starter_content = array(
@@ -264,54 +264,15 @@ function historiador_content_width() {
 add_action( 'template_redirect', 'historiador_content_width', 0 );
 
 /**
- * Register custom fonts.
+ * Register self-hosted fonts
  */
-function historiador_fonts_url() {
-	$fonts_url = '';
-
-	/*
-	 * Translators: If there are characters in your language that are not
-	 * supported by Libre Franklin, translate this to 'off'. Do not translate
-	 * into your own language.
-	 */
-	$libre_franklin = _x( 'on', 'Libre Franklin font: on or off', 'historiador' );
-
-	if ( 'off' !== $libre_franklin ) {
-		$font_families = array();
-
-		$font_families[] = 'Libre Franklin:300,300i,400,400i,600,600i,800,800i';
-
-		$query_args = array(
-			'family' => urlencode( implode( '|', $font_families ) ),
-			'subset' => urlencode( 'latin,latin-ext' ),
-		);
-
-		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-	}
-
-	return esc_url_raw( $fonts_url );
+function historiador_hosted_fonts() {
+	wp_register_style(
+		'historiador-hosted-webfonts', // handle name
+		get_template_directory_uri() . 'webfonts.min.css', // the URL of the stylesheet
+		'1.0', // version number
+	);
 }
-
-/**
- * Add preconnect for Google Fonts.
- *
- * @since Historiador 1.0
- *
- * @param array  $urls           URLs to print for resource hints.
- * @param string $relation_type  The relation type the URLs are printed.
- * @return array $urls           URLs to print for resource hints.
- */
-function historiador_resource_hints( $urls, $relation_type ) {
-	if ( wp_style_is( 'historiador-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
-		$urls[] = array(
-			'href' => 'https://fonts.gstatic.com',
-			'crossorigin',
-		);
-	}
-
-	return $urls;
-}
-add_filter( 'wp_resource_hints', 'historiador_resource_hints', 10, 2 );
 
 /**
  * Register widget area.
@@ -503,8 +464,8 @@ add_action( 'wp_head', 'historiador_colors_css_wrap' );
  * Enqueue scripts and styles.
  */
 function historiador_scripts() {
-	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'historiador-fonts', historiador_fonts_url(), array(), null );
+	// Webfont stylesheet.
+	wp_enqueue_style( 'historiador-hosted-webfonts' );
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'historiador-style', get_stylesheet_uri() );
