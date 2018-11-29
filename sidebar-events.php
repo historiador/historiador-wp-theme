@@ -16,6 +16,6 @@ if ( ! is_active_sidebar( 'sidebar-8' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Podcast Sidebar', 'historiador' ); ?>">
+<aside id="secondary" class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Sidebar for Events', 'historiador' ); ?>">
 	<?php dynamic_sidebar( 'sidebar-8' ); ?>
 </aside><!-- #secondary -->
