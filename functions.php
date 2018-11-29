@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package WordPress
- * @subpackage Twenty_Seventeen
+ * @subpackage Historiador
  * @since 1.0
  */
 
@@ -108,11 +108,20 @@ function historiador_setup() {
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
-	/*
-	 * This theme styles the visual editor to resemble the theme style,
-	 * specifically colors, and column width.
-	  */
-	add_editor_style( array( 'assets/css/editor-style.css' ) );
+// NOTE by Protesilaos on 2018-11-29
+//
+// I have disabled this, because there is no point in trying to mimic
+// how the content will look on the actual page.  If we wanted that, we
+// would be using the Gutenberg editor.  The assumption here is that
+// writers are using their own editor and only interfacing with WP to
+// post their writings.  Furthermore, this is disabled to reduce the
+// amount of style sheets that need to be maintained.
+//
+//	/*
+//	 * This theme styles the visual editor to resemble the theme style,
+//	 * specifically colors, and column width.
+//	  */
+//	add_editor_style( array( 'assets/css/editor-style.css' ) );
 
 	// Define and register starter content to showcase the theme on new sites.
 	$starter_content = array(
