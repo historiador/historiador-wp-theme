@@ -5,10 +5,22 @@ video {
 	max-width: 100%; /* Adhere to container width. */
 }
 
+img.alignleft {
+	float: left;
+	margin-right: 1.5em;
+}
+
+img.alignright {
+	float: right;
+	margin-left: 1.5em;
+}
+
 img.alignleft,
 img.alignright {
-	float: none;
-	margin: 0;
+	@include tablet {
+		float: none;
+		margin: 0;
+	}
 }
 
 .page-content .wp-smiley,

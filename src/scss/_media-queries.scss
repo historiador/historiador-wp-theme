@@ -11,78 +11,7 @@
 
 @media screen and (min-width: 30em) {
 
-	/* Typography */
-
-	body,
-	button,
-	input,
-	select,
-	textarea {
-		font-size: 18px;
-		font-size: 1.125rem;
-	}
-
-	h1 {
-		font-size: 30px;
-		font-size: 1.875rem;
-	}
-
-	h2,
-	.home.blog .entry-title,
-	.page .panel-content .recent-posts .entry-title {
-		font-size: 26px;
-		font-size: 1.625rem;
-	}
-
-	h3 {
-		font-size: 22px;
-		font-size: 1.375rem;
-	}
-
-	h4 {
-		font-size: 18px;
-		font-size: 1.125rem;
-	}
-
-	h5 {
-		font-size: 13px;
-		font-size: 0.8125rem;
-	}
-
-	h6 {
-		font-size: 16px;
-		font-size: 1rem;
-	}
-
-	.entry-content blockquote.alignleft,
-	.entry-content blockquote.alignright {
-		font-size: 14px;
-		font-size: 0.875rem;
-	}
-
-	/* Fix image alignment */
-	img.alignleft {
-		float: left;
-		margin-right: 1.5em;
-	}
-
-	img.alignright {
-		float: right;
-		margin-left: 1.5em;
-	}
-
-	/* Site Branding */
-
-	.site-branding {
-		padding: 3em 0;
-	}
-
 	/* Front Page */
-
-	.panel-content .wrap {
-		padding-bottom: 2em;
-		padding-top: 3.5em;
-	}
 
 	.page-one-column .panel-content .wrap {
 		max-width: 740px;
@@ -99,13 +28,6 @@
 	/* Blog Index, Archive, Search */
 
 	.page-numbers.current {
-		font-size: 16px;
-		font-size: 1rem;
-	}
-
-	/* Site Footer */
-
-	.site-footer {
 		font-size: 16px;
 		font-size: 1rem;
 	}
@@ -135,24 +57,6 @@
 
 @media screen and (min-width: 48em) {
 
-	/* Typography */
-
-	body,
-	button,
-	input,
-	select,
-	textarea {
-		font-size: 16px;
-		font-size: 1rem;
-		line-height: 1.5;
-	}
-
-	.entry-content blockquote.alignleft,
-	.entry-content blockquote.alignright {
-		font-size: 13px;
-		font-size: 0.8125rem;
-	}
-
 	/* Layout */
 
 	.wrap {
@@ -177,11 +81,6 @@
 	}
 
 	/* Site Branding */
-
-	.site-branding {
-		margin-bottom: 0;
-	}
-
 	.has-header-image.historiador-front-page .site-branding,
 	.has-header-video.historiador-front-page .site-branding,
 	.has-header-image.home.blog .site-branding,
@@ -239,16 +138,6 @@
 	.title-tagline-hidden.home.has-header-image .custom-logo-link img,
 	.title-tagline-hidden.home.has-header-video .custom-logo-link img {
 		max-height: 200px;
-	}
-
-	.site-title {
-		font-size: 36px;
-		font-size: 2.25rem;
-	}
-
-	.site-description {
-		font-size: 16px;
-		font-size: 1rem;
 	}
 
 	/* Navigation */
@@ -529,11 +418,6 @@
 		height: calc(100vh - 32px);
 	}
 
-	.panel-content .wrap {
-		padding-bottom: 4.5em;
-		padding-top: 6em;
-	}
-
 	.panel-image {
 		height: 100vh;
 		max-height: 1200px;
@@ -792,13 +676,6 @@
 	}
 
 	/* Footer */
-
-	.site-footer {
-		font-size: 14px;
-		font-size: 0.875rem;
-		line-height: 1.6;
-		margin-top: 3em;
-	}
 
 	.site-footer .widget-column.footer-widget-1 {
 		float: left;

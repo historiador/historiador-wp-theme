@@ -39,8 +39,18 @@
 }
 
 .panel-content .wrap {
-	padding-bottom: $vertical-rhythm-0;
-	padding-top: $vertical-rhythm-1;
+	@include tablet {
+		padding-top: $vertical-rhythm-3;
+		padding-bottom: $vertical-rhythm-2;
+	}
+
+	@include desktop {
+		padding-top: $vertical-rhythm-4;
+		padding-bottom: $vertical-rhythm-3;
+	}
+
+	padding-top: $vertical-rhythm-2;
+	padding-bottom: $vertical-rhythm-1;
 }
 
 /* Panel edit link */

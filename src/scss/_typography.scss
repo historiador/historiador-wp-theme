@@ -96,6 +96,11 @@ blockquote cite {
 	margin-top: $vertical-rhythm-0;
 }
 
+.entry-content blockquote.alignleft,
+.entry-content blockquote.alignright {
+	@include fluid-font-size($font-size-small);
+}
+
 address {
 	margin: 0 0 $vertical-rhythm-0;
 }

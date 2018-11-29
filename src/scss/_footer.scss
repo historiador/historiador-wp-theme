@@ -1,6 +1,18 @@
 // TODO we should use "brand colours" for the footer
 .site-footer {
+	@include fluid-font-size($font-size-small);
+
+	@include tablet {
+		margin-top: $vertical-rhythm-2;
+	}
+
+	@include desktop {
+		margin-top: $vertical-rhythm-3;
+	}
+
+
 	border-top: 1px solid $border-color-dark-2;
+	margin-top: $vertical-rhythm-1;
 
     .wrap {
         padding-bottom: $vertical-rhythm-0;

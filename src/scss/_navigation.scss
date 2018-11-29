@@ -13,10 +13,8 @@
 }
 
 .navigation-top a {
-	color: $color-base-fg; // TODO why not an accent colour, ideally brand-link that is blue, but not too much
+	color: $color-base-fg;
 	font-weight: 400;
-	-webkit-transition: color 0.2s; // TODO review transitions
-	transition: color 0.2s;
 }
 
 .navigation-top .current-menu-item > a,
@@ -86,7 +84,6 @@
 .main-navigation a {
 	display: block;
 	padding: $space-0 0;
-	text-decoration: none;
 }
 
 .main-navigation a:hover {
