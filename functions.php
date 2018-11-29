@@ -377,6 +377,18 @@ function historiador_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+
+	register_sidebar(
+		array(
+			'name'          => __( 'Search Sidebar', 'historiador' ),
+			'id'            => 'sidebar-10',
+			'description'   => __( 'Add widgets here to appear in your sidebar on pages that display search results.', 'historiador' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'historiador_widgets_init' );
 
