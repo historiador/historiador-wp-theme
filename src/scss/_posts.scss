@@ -36,11 +36,6 @@ body.page:not(.historiador-front-page) .entry-title {
 	margin-bottom: $vertical-rhythm-1;
 }
 
-.entry-title a {
-	color: $color-extra-link;
-	text-decoration: none;
-}
-
 .entry-title:not(:first-child) {
 	padding-top: 0;
 }
@@ -50,10 +45,6 @@ body.page:not(.historiador-front-page) .entry-title {
 
 	color: $color-base-fg-alt;
 	font-weight: 400;
-}
-
-.entry-meta a {
-	color: $color-base-fg-alt;
 }
 
 .byline,
@@ -264,11 +255,6 @@ body:not(.historiador-front-page) .entry-header {
 
 .entry-footer .cat-links + .tags-links {
 	margin-top: $space-1;
-}
-
-.entry-footer .cat-links a,
-.entry-footer .tags-links a {
-	color: $color-extra-link;
 }
 
 .entry-footer .cat-links .icon,
