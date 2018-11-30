@@ -284,9 +284,9 @@ add_action( 'template_redirect', 'historiador_content_width', 0 );
 function historiador_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => __( 'Blog Sidebar', 'historiador' ),
+			'name'          => __( 'Blog PT Sidebar', 'historiador' ),
 			'id'            => 'sidebar-1',
-			'description'   => __( 'Add widgets here to appear in your sidebar on blog posts and archive pages.', 'historiador' ),
+			'description'   => __( 'Add widgets here to appear in your sidebar on PT blog posts and archive pages.', 'historiador' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -318,12 +318,11 @@ function historiador_widgets_init() {
 		)
 	);
 
-    // Sidebars for custom post types
 	register_sidebar(
 		array(
-			'name'          => __( 'Podcast Sidebar', 'historiador' ),
-			'id'            => 'sidebar-4',
-			'description'   => __( 'Add widgets here to appear in your sidebar on Podcast posts and archive pages.', 'historiador' ),
+			'name'          => __( 'Search results Sidebar', 'historiador' ),
+			'id'            => 'sidebar-search',
+			'description'   => __( 'Add widgets here to appear in your sidebar on pages that display search results.', 'historiador' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -331,10 +330,11 @@ function historiador_widgets_init() {
 		)
 	);
 
+	// Sidebars for custom post types.
 	register_sidebar(
 		array(
 			'name'          => __( 'Blog EN Sidebar', 'historiador' ),
-			'id'            => 'sidebar-5',
+			'id'            => 'sidebar-blog_en',
 			'description'   => __( 'Add widgets here to appear in your sidebar on "The Man from Lisbon" posts and archive pages.', 'historiador' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -346,7 +346,7 @@ function historiador_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => __( 'Books Sidebar', 'historiador' ),
-			'id'            => 'sidebar-6',
+			'id'            => 'sidebar-books',
 			'description'   => __( 'Add widgets here to appear in your sidebar on Book posts and archive pages.', 'historiador' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -357,32 +357,8 @@ function historiador_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => __( 'Videos Sidebar', 'historiador' ),
-			'id'            => 'sidebar-7',
-			'description'   => __( 'Add widgets here to appear in your sidebar on Video posts and archive pages.', 'historiador' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-
-	register_sidebar(
-		array(
-			'name'          => __( 'Events Sidebar', 'historiador' ),
-			'id'            => 'sidebar-8',
-			'description'   => __( 'Add widgets here to appear in your sidebar on Event posts and archive pages.', 'historiador' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-
-	register_sidebar(
-		array(
 			'name'          => __( 'Europarl Sidebar', 'historiador' ),
-			'id'            => 'sidebar-9',
+			'id'            => 'sidebar-europarl',
 			'description'   => __( 'Add widgets here to appear in your sidebar on Europarl posts and archive pages.', 'historiador' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -393,9 +369,33 @@ function historiador_widgets_init() {
 
 	register_sidebar(
 		array(
-			'name'          => __( 'Search Sidebar', 'historiador' ),
-			'id'            => 'sidebar-10',
-			'description'   => __( 'Add widgets here to appear in your sidebar on pages that display search results.', 'historiador' ),
+			'name'          => __( 'Events Sidebar', 'historiador' ),
+			'id'            => 'sidebar-events',
+			'description'   => __( 'Add widgets here to appear in your sidebar on Event posts and archive pages.', 'historiador' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => __( 'Podcast Sidebar', 'historiador' ),
+			'id'            => 'sidebar-podcasts',
+			'description'   => __( 'Add widgets here to appear in your sidebar on Podcast posts and archive pages.', 'historiador' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => __( 'Videos Sidebar', 'historiador' ),
+			'id'            => 'sidebar-videos',
+			'description'   => __( 'Add widgets here to appear in your sidebar on Video posts and archive pages.', 'historiador' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',

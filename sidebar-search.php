@@ -11,11 +11,11 @@
  */
 
 // NOTE see functions.php `register_sidebar()`
-if ( ! is_active_sidebar( 'sidebar-10' ) ) {
+if ( ! is_active_sidebar( 'sidebar-search' ) ) {
 	return;
 }
 ?>
 
 <aside id="secondary" class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Sidebar for search results', 'historiador' ); ?>">
-	<?php dynamic_sidebar( 'sidebar-10' ); ?>
+	<?php dynamic_sidebar( 'sidebar-search' ); ?>
 </aside><!-- #secondary -->
