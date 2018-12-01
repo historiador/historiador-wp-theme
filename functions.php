@@ -72,6 +72,7 @@ function historiador_setup() {
 	 */
 	add_theme_support(
 		'html5', array(
+			'search-form',
 			'comment-form',
 			'comment-list',
 			'gallery',
@@ -482,11 +483,11 @@ add_action( 'wp_head', 'historiador_colors_css_wrap' );
  * Enqueue scripts and styles.
  */
 function historiador_scripts() {
+	// Theme stylesheet.
+	wp_enqueue_style( 'historiador-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
+
 	// Webfont stylesheet.
 	wp_enqueue_style( 'historiador-webfonts', get_theme_file_uri( 'webfonts.min.css' ), array( 'historiador-style' ), '1.20181128174405' );
-
-	// Theme stylesheet.
-	wp_enqueue_style( 'historiador-style', get_stylesheet_uri() );
 
 	// Load the dark colorscheme.
 	if ( 'dark' === get_theme_mod( 'colorscheme', 'light' ) || is_customize_preview() ) {
