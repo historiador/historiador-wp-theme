@@ -454,31 +454,6 @@ function historiador_pingback_header() {
 }
 add_action( 'wp_head', 'historiador_pingback_header' );
 
-// TODO candidate for removal
-/**
- * Display custom color CSS.
- */
-function historiador_colors_css_wrap() {
-	if ( 'custom' !== get_theme_mod( 'colorscheme' ) && ! is_customize_preview() ) {
-		return;
-	}
-
-	require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
-	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) );
-
-	$customize_preview_data_hue = '';
-	if ( is_customize_preview() ) {
-		$customize_preview_data_hue = 'data-hue="' . $hue . '"';
-	}
-?>
-	<style type="text/css" id="custom-theme-colors" <?php echo $customize_preview_data_hue; ?>>
-		<?php echo historiador_custom_colors_css(); ?>
-	</style>
-<?php
-}
-add_action( 'wp_head', 'historiador_colors_css_wrap' );
-
-// TODO enqueue all js through main.min.js or some appropriate file?
 /**
  * Enqueue scripts and styles.
  */
@@ -488,11 +463,6 @@ function historiador_scripts() {
 
 	// Webfont stylesheet.
 	wp_enqueue_style( 'historiador-webfonts', get_theme_file_uri( 'webfonts.min.css' ), array( 'historiador-style' ), '1.20181128174405' );
-
-	// Load the dark colorscheme.
-	if ( 'dark' === get_theme_mod( 'colorscheme', 'light' ) || is_customize_preview() ) {
-		wp_enqueue_style( 'historiador-colors-dark', get_theme_file_uri( '/assets/css/colors-dark.css' ), array( 'historiador-style' ), '1.0' );
-	}
 
 	wp_enqueue_script( 'historiador-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
 
@@ -640,7 +610,6 @@ require get_parent_theme_file_path( '/inc/template-tags.php' );
  */
 require get_parent_theme_file_path( '/inc/template-functions.php' );
 
-// TODO review the customizer additions.  No need for bloat.
 /**
  * Customizer additions.
  */
