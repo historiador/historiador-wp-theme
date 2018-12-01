@@ -6,7 +6,6 @@
  *
  * @package WordPress
  * @subpackage Historiador
- * @since 1.0
  */
 
 /**
@@ -228,8 +227,6 @@ function historiador_setup() {
 	/**
 	 * Filters Historiador array of starter content.
 	 *
-	 * @since Historiador 1.1
-	 *
 	 * @param array $starter_content Array of starter content.
 	 */
 	$starter_content = apply_filters( 'historiador_starter_content', $starter_content );
@@ -268,8 +265,6 @@ function historiador_content_width() {
 
 	/**
 	 * Filter Historiador content width of the theme.
-	 *
-	 * @since Historiador 1.0
 	 *
 	 * @param int $content_width Content width in pixels.
 	 */
@@ -412,8 +407,6 @@ add_action( 'widgets_init', 'historiador_widgets_init' );
  * Replaces "[...]" (appended to automatically generated excerpts) with ... and
  * a 'Continue reading' link.
  *
- * @since Historiador 1.0
- *
  * @param string $link Link to single post/page.
  * @return string 'Continue reading' link prepended with an ellipsis.
  */
@@ -436,8 +429,6 @@ add_filter( 'excerpt_more', 'historiador_excerpt_more' );
  * Handles JavaScript detection.
  *
  * Adds a `js` class to the root `<html>` element when JavaScript is detected.
- *
- * @since Historiador 1.0
  */
 function historiador_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
@@ -498,8 +489,6 @@ add_action( 'wp_enqueue_scripts', 'historiador_scripts' );
  * Add custom image sizes attribute to enhance responsive image functionality
  * for content images.
  *
- * @since Historiador 1.0
- *
  * @param string $sizes A source size value for use in a 'sizes' attribute.
  * @param array  $size  Image size. Accepts an array of width and height
  *                      values in pixels (in that order).
@@ -525,8 +514,6 @@ add_filter( 'wp_calculate_image_sizes', 'historiador_content_image_sizes_attr', 
 /**
  * Filter the `sizes` value in the header image markup.
  *
- * @since Historiador 1.0
- *
  * @param string $html   The HTML image tag markup being filtered.
  * @param object $header The custom header object returned by 'get_custom_header()'.
  * @param array  $attr   Array of the attributes for the image tag.
@@ -543,8 +530,6 @@ add_filter( 'get_header_image_tag', 'historiador_header_image_tag', 10, 3 );
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
  * for post thumbnails.
- *
- * @since Historiador 1.0
  *
  * @param array $attr       Attributes for the image markup.
  * @param int   $attachment Image attachment ID.
@@ -565,8 +550,6 @@ add_filter( 'wp_get_attachment_image_attributes', 'historiador_post_thumbnail_si
 /**
  * Use front-page.php when Front page displays is set to a static page.
  *
- * @since Historiador 1.0
- *
  * @param string $template front-page.php.
  *
  * @return string The template to be used: blank if is_home() is true (defaults to index.php), else $template.
@@ -579,8 +562,6 @@ add_filter( 'frontpage_template', 'historiador_front_page_template' );
 /**
  * Modifies tag cloud widget arguments to display all tags in the same font size
  * and use list format for better accessibility.
- *
- * @since Historiador 1.4
  *
  * @param array $args Arguments for tag cloud widget.
  * @return array The filtered arguments for tag cloud widget.
