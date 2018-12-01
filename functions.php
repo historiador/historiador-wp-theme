@@ -330,7 +330,8 @@ function historiador_widgets_init() {
 		)
 	);
 
-	// Sidebars for custom post types.
+	// START DO NOT EDIT THIS COMMENT {{{
+	// Sidebars for custom post types
 	register_sidebar(
 		array(
 			'name'          => __( 'Blog EN Sidebar', 'historiador' ),
@@ -402,6 +403,7 @@ function historiador_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+	// END DO NOT EDIT THIS COMMENT }}}
 }
 add_action( 'widgets_init', 'historiador_widgets_init' );
 
