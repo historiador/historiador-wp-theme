@@ -3,8 +3,7 @@
  * Historiador: Customizer
  *
  * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
+ * @subpackage Historiador
  */
 
 /**
@@ -78,7 +77,7 @@ function historiador_customize_register( $wp_customize ) {
 	 */
 	$wp_customize->add_section(
 		'theme_options', array(
-			'title'    => __( 'Theme Options', 'historiador' ),
+			'title'    => __( 'Historiador Options', 'historiador' ),
 			'priority' => 130, // Before Additional CSS.
 		)
 	);
@@ -107,8 +106,6 @@ function historiador_customize_register( $wp_customize ) {
 
 	/**
 	 * Filter number of front page sections in Historiador.
-	 *
-	 * @since Historiador 1.0
 	 *
 	 * @param int $num_sections Number of front page sections.
 	 */
@@ -144,6 +141,12 @@ function historiador_customize_register( $wp_customize ) {
 			)
 		);
 	}
+
+	// No need to mess around with these
+	$wp_customize->remove_panel('widgets');
+	$wp_customize->remove_section( 'colors' );
+	$wp_customize->remove_section( 'static_front_page' );
+	$wp_customize->remove_section( 'custom_css' );
 }
 add_action( 'customize_register', 'historiador_customize_register' );
 
@@ -183,7 +186,6 @@ function historiador_sanitize_colorscheme( $input ) {
 /**
  * Render the site title for the selective refresh partial.
  *
- * @since Historiador 1.0
  * @see historiador_customize_register()
  *
  * @return void
@@ -195,7 +197,6 @@ function historiador_customize_partial_blogname() {
 /**
  * Render the site tagline for the selective refresh partial.
  *
- * @since Historiador 1.0
  * @see historiador_customize_register()
  *
  * @return void
