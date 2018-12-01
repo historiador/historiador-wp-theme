@@ -10,11 +10,11 @@ THIS IS WORK IN PROGRESS.  The following document has not been updated for a whi
 
 Developer: Protesilaos Stavrou (https://protesilaos.com)
 Requires at least: WordPress 4.7
-Tested up to: WordPress 5.0-trunk
-Version: 0.1.0
+Tested up to: WordPress 5.0
+Version: 1.0
 License: GNU General Public License Version 3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 
 About this theme
 ----------------
