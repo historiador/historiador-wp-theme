@@ -17,7 +17,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<header class="entry-header">
-		<?php if ( 'post' === get_post_type() ) : ?>
+		<?php if ( get_post_type() ) : ?>
 			<div class="entry-meta">
 				<?php
 				echo historiador_time_link();

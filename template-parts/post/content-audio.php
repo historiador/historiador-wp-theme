@@ -20,7 +20,7 @@
 	?>
 	<header class="entry-header">
 		<?php
-		if ( 'post' === get_post_type() ) {
+		if ( get_post_type() ) {
 			echo '<div class="entry-meta">';
 			if ( is_single() ) {
 				historiador_posted_on();
