@@ -68,22 +68,24 @@ gulp.task('style', function() {
 /////         .pipe(gulp.dest('src/scss'));
 ///// });
 
-// Prepare JS
-// ----------
-// gulp-jshint requires jshint
-// Already installed with the rest of the dependencies
-gulp.task('js', function() {
-	var jshint = require('gulp-jshint');
-	var uglify = require('gulp-uglify');
-
-	return gulp.src('assets/js/**/*.js')
-		.pipe(jshint())
-		.pipe(jshint.reporter('default'))
-		.pipe(uglify())
-		.pipe(concat('main.js'))
-		.pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('.'));
-});
+// NOTE Are we going to enqueue minified scripts?  The default is to add
+// each script separately.
+//// // Prepare JS
+//// // ----------
+//// // gulp-jshint requires jshint
+//// // Already installed with the rest of the dependencies
+//// gulp.task('js', function() {
+//// 	var jshint = require('gulp-jshint');
+//// 	var uglify = require('gulp-uglify');
+//// 
+//// 	return gulp.src('assets/js/**/*.js')
+//// 		.pipe(jshint())
+//// 		.pipe(jshint.reporter('default'))
+//// 		.pipe(uglify())
+//// 		.pipe(concat('main.js'))
+//// 		.pipe(rename({suffix: '.min'}))
+////         .pipe(gulp.dest('.'));
+//// });
 
 // Prepare Webfonts CSS
 // --------------------
