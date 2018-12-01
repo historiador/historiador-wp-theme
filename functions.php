@@ -494,20 +494,6 @@ function historiador_scripts() {
 		wp_enqueue_style( 'historiador-colors-dark', get_theme_file_uri( '/assets/css/colors-dark.css' ), array( 'historiador-style' ), '1.0' );
 	}
 
-	// Load the Internet Explorer 9 specific stylesheet, to fix display issues in the Customizer.
-	if ( is_customize_preview() ) {
-		wp_enqueue_style( 'historiador-ie9', get_theme_file_uri( '/assets/css/ie9.css' ), array( 'historiador-style' ), '1.0' );
-		wp_style_add_data( 'historiador-ie9', 'conditional', 'IE 9' );
-	}
-
-	// Load the Internet Explorer 8 specific stylesheet.
-	wp_enqueue_style( 'historiador-ie8', get_theme_file_uri( '/assets/css/ie8.css' ), array( 'historiador-style' ), '1.0' );
-	wp_style_add_data( 'historiador-ie8', 'conditional', 'lt IE 9' );
-
-	// Load the html5 shiv.
-	wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '3.7.3' );
-	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
-
 	wp_enqueue_script( 'historiador-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
 
 	$historiador_l10n = array(
