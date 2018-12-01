@@ -107,7 +107,6 @@ function historiador_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
-
 }
 add_action( 'after_setup_theme', 'historiador_setup' );
 
@@ -466,6 +465,11 @@ require get_parent_theme_file_path( '/inc/template-tags.php' );
  * Additional features to allow styling of the templates.
  */
 require get_parent_theme_file_path( '/inc/template-functions.php' );
+
+/**
+ * Remove "Archive: " from archive pages.  Keep the rest in tact.
+ */
+require get_parent_theme_file_path( '/inc/custom-archive-titles.php' );
 
 /**
  * Customizer additions.
