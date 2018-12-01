@@ -78,7 +78,7 @@ if ( ! function_exists( 'historiador_entry_footer' ) ) :
 
 			echo '<footer class="entry-footer">';
 
-			if ( 'post' === get_post_type() ) {
+			if ( get_post_type() ) {
 				if ( ( $categories_list && historiador_categorized_blog() ) || $tags_list ) {
 					echo '<span class="cat-tags-links">';
 
