@@ -30,49 +30,6 @@ function historiador_customize_register( $wp_customize ) {
 	);
 
 	/**
-	 * Custom colors.
-	 */
-	$wp_customize->add_setting(
-		'colorscheme', array(
-			'default'           => 'light',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'historiador_sanitize_colorscheme',
-		)
-	);
-
-	$wp_customize->add_setting(
-		'colorscheme_hue', array(
-			'default'           => 250,
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'absint', // The hue is stored as a positive integer.
-		)
-	);
-
-	$wp_customize->add_control(
-		'colorscheme', array(
-			'type'     => 'radio',
-			'label'    => __( 'Color Scheme', 'historiador' ),
-			'choices'  => array(
-				'light'  => __( 'Light', 'historiador' ),
-				'dark'   => __( 'Dark', 'historiador' ),
-				'custom' => __( 'Custom', 'historiador' ),
-			),
-			'section'  => 'colors',
-			'priority' => 5,
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize, 'colorscheme_hue', array(
-				'mode'     => 'hue',
-				'section'  => 'colors',
-				'priority' => 6,
-			)
-		)
-	);
-
-	/**
 	 * Theme options.
 	 */
 	$wp_customize->add_section(
@@ -166,21 +123,6 @@ function historiador_sanitize_page_layout( $input ) {
 	}
 
 	return '';
-}
-
-/**
- * Sanitize the colorscheme.
- *
- * @param string $input Color scheme.
- */
-function historiador_sanitize_colorscheme( $input ) {
-	$valid = array( 'light', 'dark', 'custom' );
-
-	if ( in_array( $input, $valid, true ) ) {
-		return $input;
-	}
-
-	return 'light';
 }
 
 /**
