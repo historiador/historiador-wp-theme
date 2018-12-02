@@ -74,20 +74,14 @@ i {
 }
 
 blockquote {
-    @include fluid-font-size($font-size-medium); // TODO do we need to define this again?
-
-	@include tablet {
-		padding: 0 0 0 $vertical-rhythm-1;
-	}
-
 	@include desktop {
-		padding: 0 0 0 $vertical-rhythm-2;
+		padding: 0 0 0 $vertical-rhythm-3;
 	}
 
 	font-style: italic;
 	margin: 0;
 	overflow: hidden;
-	padding: 0 0 0 $vertical-rhythm-0;
+	padding: 0 0 0 $vertical-rhythm-2;
 }
 
 blockquote cite {
