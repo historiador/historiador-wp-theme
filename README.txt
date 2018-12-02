@@ -1,41 +1,61 @@
 Historiador WordPress theme
 ===========================
+A fork of the Twenty Seventeen WordPress theme, geared towards making 
+a modern, full-featured personal website for use by Rui Tavares.
 
 
-THIS IS WORK IN PROGRESS.  The following document has not been updated for a while.  Whatever information is presented herein may be false, incomplete, or outdated.  Updates shall, noetheless, be delivered on a regular basis from now on (starting 2018-11-20).
-
-
-
-
-
-Developer: Protesilaos Stavrou (https://protesilaos.com)
+Developer information
+---------------------
+Developers: Protesilaos Stavrou, André Góis Fernandes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.0
 Version: 1.0
 License: GNU General Public License Version 3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: one-column, two-columns, right-sidebar, flexible-header, 
+accessibility-ready, custom-colors, custom-header, custom-menu, 
+custom-logo, editor-style, featured-images, footer-widgets, 
+post-formats, sticky-post, theme-options, threaded-comments, 
+translation-ready
+
 
 About this theme
 ----------------
-A fork of Twenty Seventeen WordPress theme, geared towards making a modern, full-featured personal website.
+The main departure from the base theme is the incorporation of SCSS and 
+Gulp build frameworks.  Emphasis is placed on the portability and 
+maintainability of the code base, as this theme is intended to be used 
+at least for five/six years, starting from the summer of 2018.
 
-The main departure from the base theme is the incorporation of SCSS and Gulp build frameworks. Emphasis is placed on the portability and maintainability of the code base, as this theme is intended to be used at least for five/six years, starting from the summer of 2018.
+Further major changes pertain to the introduction of a WCAG AAA 
+compliant colour palette, a consistent font scale, fluid font sizes, and 
+accompanying spacing measurements.
 
-Further major changes pertain to the introduction of a WCAG AAA compliant colour palette, a consistent font scale, fluid font sizes, and accompanying spacing measurements.
+The use of SCSS + Gulp delivers some important benefits, from the point
+of view of a developer:
 
-The use of SCSS + Gulp delivers some important benefits, from a developer's perspective:
+	* Faster development cycles.
+	* More portable code.
+	* The DRY principle (Don't Repeat Yourself) by using SCSS variables
+	  and mixins.
+	* Media queries are written in each component, instead of
+	  replicating them in a separate style sheet, making for a more
+	  readable source code.
 
-- Faster development cycles.
-- More portable code.
-- The DRY principle (Don't Repeat Yourself) by using SCSS variables and mixins.
-- Media queries are written in each component, instead of replicating them in a separate style sheet, making for a more readable source code.
+In terms of performance optimisations, the following are the headline 
+features:
 
-In terms of performance optimisations, the following are the headline features:
+	* Minification of output CSS.
+	* Self host web fonts, instead of making an API call to Google
+	  Fonts.
 
-- Minification of output CSS.
-- Concatenation and minification of JS.
-- Self host web fonts, instead of making an API call to Google Fonts.
+
+
+TODO Update documentation after this point.  Last reviewed on
+2018-12-02.
+
+
+
+
 
 
 
