@@ -61,8 +61,7 @@ body.page:not(.historiador-front-page) .entry-title {
 .comments-pagination {
     @include fluid-font-size($font-size-small);
 
-	border-top: 1px solid $border-color-dark-2;
-	font-weight: 700;
+	border-top: 1px dashed $border-color-dark-2;
 	padding: $space-2 0;
 	text-align: center;
 }
@@ -78,16 +77,35 @@ body.page:not(.historiador-front-page) .entry-title {
 }
 
 .page-numbers {
+	@include fluid-font-size($font-size-medium);
+
+	@include tablet {
+		display: inline-block;
+	}
+
 	display: none;
+	background: $color-base-bg-alt;
 	padding: $space-0 $space-1;
+
+	&.dots {
+		background: none;
+	}
 }
 
-.page-numbers.current { // TODO review pagination current styles, contingent on the rest of the styles below
-	color: #767676;
+.page-numbers.current {
 	display: inline-block;
+	font-weight: 700;
 }
 
 .page-numbers.current .screen-reader-text {
+	@include tablet {
+		clip: rect(1px, 1px, 1px, 1px);
+		height: 1px;
+		overflow: hidden;
+		position: absolute !important;
+		width: 1px;
+	}
+
 	clip: auto;
 	height: auto;
 	overflow: auto;
@@ -97,29 +115,8 @@ body.page:not(.historiador-front-page) .entry-title {
 
 .prev.page-numbers,
 .next.page-numbers {
-	background-color: #ddd;
-	-webkit-border-radius: 2px;
-	border-radius: 2px;
+	background-color: $color-base-bg-alt;
 	display: inline-block;
-	font-size: 24px;
-	font-size: 1.5rem;
-	line-height: 1;
-	padding: 0.25em 0.5em 0.4em;
-}
-
-.prev.page-numbers,
-.next.page-numbers { // TODO review transitions
-	-webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
-	transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.3s ease-in-out;
-}
-
-.prev.page-numbers,
-.next.page-numbers {
-    &:hover,
-    &:focus {
-        background-color: #767676;
-        color: #fff;
-    }
 }
 
 .prev.page-numbers {

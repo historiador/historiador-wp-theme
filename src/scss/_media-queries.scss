@@ -4,13 +4,6 @@
 /* Adjust positioning of edit shortcuts, override style in customize-preview.css */
 @media screen and (min-width: 30em) {
 
-	/* Blog Index, Archive, Search */
-
-	.page-numbers.current {
-		font-size: 16px;
-		font-size: 1rem;
-	}
-
 	/* Gallery Columns */
 
 	.gallery-item {
@@ -585,25 +578,6 @@
 		left: -1.25em;
 		top: 0.75em;
 		width: 32px;
-	}
-
-	/* Pagination */
-
-	.page-numbers {
-		display: inline-block;
-	}
-
-	.page-numbers.current {
-		font-size: 15px;
-		font-size: 0.9375rem;
-	}
-
-	.page-numbers.current .screen-reader-text {
-		clip: rect(1px, 1px, 1px, 1px);
-		height: 1px;
-		overflow: hidden;
-		position: absolute !important;
-		width: 1px;
 	}
 
 	/* Comments */
