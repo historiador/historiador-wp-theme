@@ -5,7 +5,7 @@
  * @link https://codex.wordpress.org/Custom_Headers
  *
  * @package WordPress
- * @subpackage Twenty_Seventeen
+ * @subpackage Historiador
  * @since 1.0
  */
 
