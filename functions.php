@@ -350,8 +350,6 @@ function historiador_scripts() {
 
 	wp_enqueue_script( 'historiador-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '1.0', true );
 
-	wp_enqueue_script( 'jquery-scrollto', get_theme_file_uri( '/assets/js/jquery.scrollTo.js' ), array( 'jquery' ), '2.1.2', true );
-
 	wp_localize_script( 'historiador-skip-link-focus-fix', 'historiadorScreenReaderText', $historiador_l10n );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

@@ -24,8 +24,4 @@
 		)
 	);
 	?>
-
-	<?php if ( ( historiador_is_frontpage() || ( is_home() && is_front_page() ) ) && has_custom_header() ) : ?>
-		<a href="#content" class="menu-scroll-down"><?php echo historiador_get_svg( array( 'icon' => 'arrow-right' ) ); ?><span class="screen-reader-text"><?php _e( 'Scroll down to content', 'historiador' ); ?></span></a>
-	<?php endif; ?>
 </nav><!-- #site-navigation -->
