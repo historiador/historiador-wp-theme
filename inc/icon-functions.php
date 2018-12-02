@@ -4,7 +4,6 @@
  *
  * @package WordPress
  * @subpackage Historiador
- * @since 1.0
  */
 
 /**
@@ -212,7 +211,6 @@ function historiador_social_links_icons() {
 	/**
 	 * Filter Historiador social links icons.
 	 *
-	 * @since Historiador 1.0
 	 *
 	 * @param array $social_links_icons Array of social links icons.
 	 */

@@ -6,7 +6,6 @@
  *
  * @package WordPress
  * @subpackage Historiador
- * @since 1.0
  */
 
 /**
@@ -18,8 +17,6 @@ function historiador_custom_header_setup() {
 
 	/**
 	 * Filter Historiador custom-header support arguments.
-	 *
-	 * @since Historiador 1.0
 	 *
 	 * @param array $args {
 	 *     An array of custom-header support arguments.

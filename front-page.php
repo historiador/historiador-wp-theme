@@ -8,8 +8,6 @@
  *
  * @package WordPress
  * @subpackage Historiador
- * @since 1.0
- * @version 1.0
  */
 
 get_header(); ?>
@@ -35,8 +33,6 @@ get_header(); ?>
 
 			/**
 			 * Filter number of front page sections in Historiador.
-			 *
-			 * @since Historiador 1.0
 			 *
 			 * @param int $num_sections Number of front page sections.
 			 */

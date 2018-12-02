@@ -4,7 +4,6 @@
  *
  * @package WordPress
  * @subpackage Historiador
- * @since 1.0
  */
 
 /**
@@ -73,8 +72,6 @@ function historiador_panel_count() {
 
 	/**
 	 * Filter number of front page sections in Historiador.
-	 *
-	 * @since Historiador 1.0
 	 *
 	 * @param int $num_sections Number of front page sections.
 	 */

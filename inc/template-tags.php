@@ -6,7 +6,6 @@
  *
  * @package WordPress
  * @subpackage Historiador
- * @since 1.0
  */
 
 if ( ! function_exists( 'historiador_posted_on' ) ) :
