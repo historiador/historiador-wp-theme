@@ -1,15 +1,29 @@
 .navigation-top {
-    @include fluid-font-size($font-size-medium);
+    @include fluid-font-size($font-size-small);
 
+	@include tablet {
+		position: absolute;
+		padding: $space-1 0;
+	}
+
+	bottom: 0;
+	left: 0;
+	position: relative;
+	right: 0;
+	width: 100%;
+	z-index: 3;
 	background: $color-base-bg;
 	border-bottom: 1px solid $border-color-light-0;
 	border-top: 1px solid $border-color-light-0;
-	position: relative;
+
 }
 
-.navigation-top .wrap {
-	max-width: 1000px; // TODO review this in accordance with measure
-	padding: 0;
+.navigation-top nav {
+	@include tablet {
+		margin-left: 0;
+	}
+
+	margin-left: -1.25em;
 }
 
 .navigation-top a {
@@ -23,13 +37,36 @@
 	font-weight: 700;
 }
 
+.site-navigation-fixed.navigation-top {
+	@include tablet {
+		bottom: auto;
+		position: fixed;
+		left: 0;
+		right: 0;
+		top: 0;
+		width: 100%;
+		z-index: 7;
+	}
+}
+
+.admin-bar .site-navigation-fixed.navigation-top {
+	@include tablet {
+		top: 32px;
+	}
+}
+
+
 .main-navigation {
 	clear: both;
 	display: block;
+	width: auto;
 }
 
 .main-navigation ul {
-	background: $color-base-bg; // TODO why does this also need the same as .navigation-top?
+	@include tablet {
+		padding: 0;
+	}
+
 	list-style: none;
 	margin: 0;
 	padding: 0 $vertical-rhythm-1;
@@ -41,6 +78,14 @@
  */
 
 .js .main-navigation ul,
+.js .main-navigation ul ul,
+.js .main-navigation > div > ul {
+	@include tablet {
+		display: block;
+	}
+}
+
+.js .main-navigation ul,
 .main-navigation .menu-item-has-children > a > .icon,
 .main-navigation .page_item_has_children > a > .icon,
 .main-navigation ul a > .icon {
@@ -48,10 +93,16 @@
 }
 
 .js .main-navigation.toggled-on > div > ul {
-	display: block; // See above where it starts as `none`
+	display: block;
 }
 
 .main-navigation > div > ul {
+	@include tablet {
+		border: none;
+		padding: 0;
+		margin-bottom: 0;
+	}
+
 	border-top: 1px solid $border-color-light-0;
 	padding: $vertical-rhythm-0 $vertical-rhythm-1;
 }
@@ -72,22 +123,41 @@
 }
 
 .main-navigation li {
-	border-bottom: 1px solid $border-color-light-0;
+	@include tablet {
+		display: inline-block;
+		border: none;
+
+		&:first-of-type a { // On >= tablet align menu to the left with rest of wrap
+			padding-left: 0;
+		}
+	}
+
+	display: block;
 	position: relative;
+	border-bottom: 1px solid $border-color-light-0;
+
+	&:last-of-type {
+		border: none;
+	}
 }
 
-.main-navigation li li,
-.main-navigation li:last-child {
-	border: 0;
+.main-navigation li li {
+	@include tablet {
+		display: block;
+	}
 }
 
 .main-navigation a {
+	@include tablet {
+		padding: $space-0 $space-1;
+	}
+
 	display: block;
 	padding: $space-0 0;
-}
 
-.main-navigation a:hover {
-	color: $color-extra-link-alt;
+	&:hover {
+		color: $color-extra-link-alt;
+	}
 }
 
 /* Menu toggle */
@@ -109,7 +179,12 @@
 
 /* Display the menu toggle when JavaScript is available. */
 
-.js .menu-toggle {
+.js .menu-toggle,
+.js .dropdown-toggle {
+	@include tablet {
+		display: none;
+	}
+
 	display: block;
 }
 
@@ -155,7 +230,7 @@
 	box-shadow: none;
 	color: $color-base-fg;
 	display: block;
-	right: -0.5em; // TODO interpolate $space-0?
+	right: -0.5em;
 	line-height: $line-height-body;
 	margin: 0 auto;
 	padding: $space-0;
@@ -175,14 +250,8 @@
 	outline: thin dotted;
 }
 
-.dropdown-toggle.toggled-on .icon { // TODO review such fluff
+.dropdown-toggle.toggled-on .icon {
 	-ms-transform: rotate(-180deg); /* IE 9 */
 	-webkit-transform: rotate(-180deg); /* Chrome, Safari, Opera */
 	transform: rotate(-180deg);
-}
-
-/* Scroll down arrow */
-
-.site-header .menu-scroll-down {
-	display: none;
 }

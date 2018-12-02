@@ -24,11 +24,23 @@ body {
 }
 
 .wrap {
+	@include tablet {
+		max-width: $viewport-measure-medium;
+		padding-left: $space-2;
+		padding-right: $space-2;
+	}
+
+	@include desktop {
+		max-width: $viewport-measure-large;
+		padding-left: $space-3;
+		padding-right: $space-3;
+	}
+
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 700px; // TODO review in accordance with measure
-	padding-left: $space-2;
-	padding-right: $space-2;
+	max-width: $viewport-measure-small;
+	padding-left: $space-1;
+	padding-right: $space-1;
 }
 
 .wrap:after {

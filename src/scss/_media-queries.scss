@@ -2,28 +2,7 @@
 // their context.  Do so last, after everything has been cleaned up.
 
 /* Adjust positioning of edit shortcuts, override style in customize-preview.css */
-@media screen and (min-width: 20em) {
-
-	body.customize-partial-edit-shortcuts-shown .site-header .site-title {
-		padding-left: 0;
-	}
-}
-
 @media screen and (min-width: 30em) {
-
-	/* Front Page */
-
-	.page-one-column .panel-content .wrap {
-		max-width: 740px;
-	}
-
-	.panel-content .entry-header {
-		margin-bottom: 4.5em;
-	}
-
-	.panel-content .recent-posts .entry-header {
-		margin-bottom: 0;
-	}
 
 	/* Blog Index, Archive, Search */
 
@@ -58,12 +37,6 @@
 @media screen and (min-width: 48em) {
 
 	/* Layout */
-
-	.wrap {
-		max-width: 1000px;
-		padding-left: 3em;
-		padding-right: 3em;
-	}
 
 	.has-sidebar:not(.error404) #primary {
 		float: left;
@@ -140,83 +113,7 @@
 		max-height: 200px;
 	}
 
-	/* Navigation */
-
-	.navigation-top {
-		bottom: 0;
-		font-size: 14px;
-		font-size: 0.875rem;
-		left: 0;
-		position: absolute;
-		right: 0;
-		width: 100%;
-		z-index: 3;
-	}
-
-	.navigation-top .wrap {
-		max-width: 1000px;
-		/* The font size is 14px here and we need 50px padding in ems */
-		padding: 0.75em 3.4166666666667em;
-	}
-
-	.navigation-top nav {
-		margin-left: -1.25em;
-	}
-
-	.site-navigation-fixed.navigation-top {
-		bottom: auto;
-		position: fixed;
-		left: 0;
-		right: 0;
-		top: 0;
-		width: 100%;
-		z-index: 7;
-	}
-
-	.admin-bar .site-navigation-fixed.navigation-top {
-		top: 32px;
-	}
-
 	/* Main Navigation */
-
-	.js .menu-toggle,
-	.js .dropdown-toggle {
-		display: none;
-	}
-
-	.main-navigation {
-		width: auto;
-	}
-
-	.js .main-navigation ul,
-	.js .main-navigation ul ul,
-	.js .main-navigation > div > ul {
-		display: block;
-	}
-
-	.main-navigation ul {
-		background: transparent;
-		padding: 0;
-	}
-
-	.main-navigation > div > ul {
-		border: 0;
-		margin-bottom: 0;
-		padding: 0;
-	}
-
-	.main-navigation li {
-		border: 0;
-		display: inline-block;
-	}
-
-	.main-navigation li li {
-		display: block;
-	}
-
-	.main-navigation a {
-		padding: 1em 1.25em;
-	}
 
 	.main-navigation ul ul {
 		background: #fff;
@@ -277,19 +174,9 @@
 		width: 16em;
 	}
 
-	.main-navigation li li {
-		-webkit-transition: background-color 0.2s ease-in-out;
-		transition: background-color 0.2s ease-in-out;
-	}
-
 	.main-navigation li li:hover,
 	.main-navigation li li.focus {
 		background: #767676;
-	}
-
-	.main-navigation li li a {
-		-webkit-transition: color 0.3s ease-in-out;
-		transition: color 0.3s ease-in-out;
 	}
 
 	.main-navigation li li.focus > a,
@@ -347,44 +234,6 @@
 		display: none;
 	}
 
-	.site-header .site-navigation-fixed .menu-scroll-down {
-		display: none;
-	}
-
-	/* Scroll down arrow */
-
-	.site-header .menu-scroll-down {
-		display: block;
-		padding: 1em;
-		position: absolute;
-		right: 0;
-	}
-
-	.site-header .menu-scroll-down .icon {
-		-webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-		-ms-transform: rotate(90deg); /* IE 9 */
-		transform: rotate(90deg);
-	}
-
-	.site-header .menu-scroll-down {
-		color: #fff;
-		top: 2em;
-	}
-
-	.site-header .navigation-top .menu-scroll-down {
-		color: #767676;
-		top: 0.7em;
-	}
-
-	.menu-scroll-down:focus {
-		outline: thin dotted;
-	}
-
-	.menu-scroll-down .icon {
-		height: 18px;
-		width: 18px;
-	}
-
 	/* Front Page */
 
 	.historiador-front-page.has-header-image .site-branding,
@@ -416,16 +265,6 @@
 	.admin-bar.home.blog.has-header-image .custom-header-media,
 	.admin-bar.home.blog.has-header-video .custom-header-media {
 		height: calc(100vh - 32px);
-	}
-
-	.panel-image {
-		height: 100vh;
-		max-height: 1200px;
-	}
-
-	/* With panel images 100% of the screen height, we're going to fix the background image where supported to create a parallax-like effect. */
-	.background-fixed .panel-image {
-		background-attachment: fixed;
 	}
 
 	.page-two-column .panel-content .entry-header {
@@ -736,17 +575,6 @@
 }
 
 @media screen and ( min-width: 67em ) {
-
-	/* Layout */
-
-	/* Navigation */
-	.navigation-top .wrap {
-		padding: 0.75em 2em;
-	}
-
-	.navigation-top nav {
-		margin-left: 0;
-	}
 
 	/* Sticky posts */
 

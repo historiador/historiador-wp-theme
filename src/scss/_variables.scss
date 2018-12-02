@@ -196,7 +196,8 @@ $font-size-xxxlarge: 1.602rem;
 
 // Typographic spacing
 // -------------------
-$font-size-base: 100%; // Use 16px if you want to develop on the de facto standard
+//// $font-size-base: 100%; // Use 16px if you want to develop on the de facto standard
+$font-size-base: 16px; // Use 16px if you want to develop on the de facto standard
 $line-height-body: 1.424;
 $line-height-heading: 1.125;
 
@@ -217,14 +218,14 @@ $vertical-rhythm-4: #{$line-height-body * 3.5}rem;
 
 // Page measure
 // ------------
-// TODO review these
-$viewport-measure: 36rem;
-$viewport-measure-xl: $viewport-measure + 6;
+$viewport-measure-small: 700px;
+$viewport-measure-medium: 850px;
+$viewport-measure-large: 1000px;
 
 // Viewports
 // ---------
 // TODO review based on styles from Historiador
-$viewport-size-tablet: 44.375em;
+$viewport-size-tablet: 45em;
 $viewport-size-desktop: 75em;
 
 // Dividers

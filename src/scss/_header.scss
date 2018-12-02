@@ -221,3 +221,11 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 	height: 100%;
 	vertical-align: bottom;
 }
+
+// TODO review this.  Was taken from _media-queries.scss
+@media screen and (min-width: 20em) {
+
+	body.customize-partial-edit-shortcuts-shown .site-header .site-title {
+		padding-left: 0;
+	}
+}
