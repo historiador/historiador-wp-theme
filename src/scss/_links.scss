@@ -23,16 +23,14 @@ a {
 	}
 }
 
-.entry-title a {
-	color: $color-extra-link;
-}
-
-.entry-meta a {
-	color: $color-base-fg-alt;
-}
-
+.entry-title a,
+.entry-meta a,
 .entry-footer .cat-links a,
 .entry-footer .tags-links a {
 	color: $color-extra-link;
-}
 
+	&:hover,
+	&:active {
+		color: $color-extra-link-alt;
+	}
+}

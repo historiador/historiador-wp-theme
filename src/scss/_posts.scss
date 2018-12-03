@@ -334,7 +334,6 @@ body:not(.historiador-front-page) .entry-header {
     @include fluid-font-size($font-size-xsmall);
 
 	background: transparent;
-	color: $color-base-fg-alt;
 	display: block;
 	margin-bottom: 1em;
 	text-transform: uppercase;
@@ -342,8 +341,6 @@ body:not(.historiador-front-page) .entry-header {
 
 .nav-title {
     @include fluid-font-size($font-size-medium);
-
-	color: $color-base-fg;
 }
 
 .post-navigation .nav-next {
