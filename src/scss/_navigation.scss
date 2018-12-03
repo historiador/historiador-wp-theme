@@ -149,6 +149,10 @@
 
 .main-navigation a {
 	@include tablet {
+		padding: $space-0;
+	}
+
+	@include desktop {
 		padding: $space-0 $space-1;
 	}
 
