@@ -56,15 +56,11 @@ global $historiadorcounter;
 				// Show three most recent posts.
 				$recent_posts = new WP_Query(
 					array(
-						'posts_per_page'      => 3,
+						'post_type'           => array('blog_en', 'books', 'europarl', 'events', 'post', 'podcasts', 'videos'),
+						'posts_per_page'      => 5,
 						'post_status'         => 'publish',
 						'ignore_sticky_posts' => true,
 						'no_found_rows'       => true,
-                        // Use this to exclude categories
-                        // Thus no need for multiple post types
-                        // Just use 'posts' with categories
-                        // Filter accordingly
-                        // 'cat'                 => '-4,-8',
 					)
 				);
 				?>
