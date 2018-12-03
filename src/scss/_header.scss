@@ -90,24 +90,31 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	padding: $space-1;
 }
 
-// XXX TODO XXX everything beyond this point needs review.  Might keep
-// it in tact, or adapt to changes made above.  These probably relate to
-// the WP customiser.
 .custom-header {
 	position: relative;
 }
 
-.has-header-image.historiador-front-page .custom-header,
-.has-header-video.historiador-front-page .custom-header,
-.has-header-image.home.blog .custom-header,
-.has-header-video.home.blog .custom-header {
-	display: table;
-	height: 300px;
-	height: 75vh;
-	width: 100%;
+.custom-header:not(.historiador-front-page):not(.home) {
+	@include tablet {
+		display: block;
+		height: 300px;
+		height: 30vh;
+	}
+
+	@include desktop {
+		height: 450px;
+		height: 40vh;
+	}
+
+	position: relative;
 }
 
 .custom-header-media {
+	@include tablet {
+		height: 165px;
+		position: relative;
+	}
+
 	bottom: 0;
 	left: 0;
 	overflow: hidden;
@@ -117,20 +124,41 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	width: 100%;
 }
 
-.custom-header-media:before {
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.3+75 */
-	background: -moz-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000", endColorstr="#4d000000", GradientType=0); /* IE6-9 */
-	bottom: 0;
-	content: "";
-	display: block;
-	height: 100%;
-	left: 0;
-	position: absolute;
-	right: 0;
-	z-index: 2;
+.has-header-image.historiador-front-page .custom-header,
+.has-header-video.historiador-front-page .custom-header,
+.has-header-image.home.blog .custom-header,
+.has-header-video.home.blog .custom-header {
+	@include tablet {
+		display: block;
+		height: auto;
+	}
+
+	display: table;
+	height: 300px;
+	height: 75vh;
+	width: 100%;
+}
+
+.historiador-front-page.has-header-image .custom-header-media,
+.historiador-front-page.has-header-video .custom-header-media,
+.home.blog.has-header-image .custom-header-media,
+.home.blog.has-header-video .custom-header-media {
+	@include tablet {
+		height: 0;
+		position: relative;
+	}
+}
+
+.has-header-image:not(.historiador-front-page):not(.home) .custom-header-media,
+.has-header-video:not(.historiador-front-page):not(.home) .custom-header-media {
+	@include tablet {
+		bottom: 0;
+		height: auto;
+		left: 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
 }
 
 .has-header-image .custom-header-media img,
@@ -152,6 +180,8 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	transform: translateX(-50%) translateY(-50%);
 }
 
+// TODO test whether we need this now that dark colours have been
+// removed
 .wp-custom-header .wp-custom-header-video-button { /* Specificity prevents .color-dark button overrides */
 	background-color: rgba(34, 34, 34, 0.5);
 	border: 1px solid rgba(255, 255, 255, 0.6);
@@ -167,6 +197,8 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	width: 45px;
 }
 
+// TODO test whether we need this now that dark colours have been
+// removed
 .wp-custom-header .wp-custom-header-video-button:hover,
 .wp-custom-header .wp-custom-header-video-button:focus { /* Specificity prevents .color-dark button overrides */
 	border-color: rgba(255, 255, 255, 0.8);
@@ -213,10 +245,34 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 	display: none;
 }
 
+
+
+.has-header-image .site-branding,
+.has-header-video .site-branding {
+	@include tablet {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}
+
+
+
 .has-header-image.historiador-front-page .site-branding,
 .has-header-video.historiador-front-page .site-branding,
 .has-header-image.home.blog .site-branding,
 .has-header-video.home.blog .site-branding {
+	@include tablet {
+		bottom: 0;
+		display: block;
+		left: 0;
+		height: auto;
+		padding-top: 0;
+		position: absolute;
+		width: 100%;
+	}
+
 	display: table-cell;
 	height: 100%;
 	vertical-align: bottom;

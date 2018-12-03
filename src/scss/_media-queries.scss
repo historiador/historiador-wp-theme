@@ -47,49 +47,6 @@
 	}
 
 	/* Site Branding */
-	.has-header-image.historiador-front-page .site-branding,
-	.has-header-video.historiador-front-page .site-branding,
-	.has-header-image.home.blog .site-branding,
-	.has-header-video.home.blog .site-branding {
-		bottom: 0;
-		display: block;
-		left: 0;
-		height: auto;
-		padding-top: 0;
-		position: absolute;
-		width: 100%;
-	}
-
-	.has-header-image.historiador-front-page .custom-header,
-	.has-header-video.historiador-front-page .custom-header,
-	.has-header-image.home.blog .custom-header,
-	.has-header-video.home.blog .custom-header {
-		display: block;
-		height: auto;
-	}
-
-	.custom-header-media {
-		height: 165px;
-		position: relative;
-	}
-
-	.historiador-front-page.has-header-image .custom-header-media,
-	.historiador-front-page.has-header-video .custom-header-media,
-	.home.blog.has-header-image .custom-header-media,
-	.home.blog.has-header-video .custom-header-media {
-		height: 0;
-		position: relative;
-	}
-
-	.has-header-image:not(.historiador-front-page):not(.home) .custom-header-media,
-	.has-header-video:not(.historiador-front-page):not(.home) .custom-header-media {
-		bottom: 0;
-		height: auto;
-		left: 0;
-		position: absolute;
-		right: 0;
-		top: 0;
-	}
 
 	.custom-logo-link {
 		padding-right: 2em;
