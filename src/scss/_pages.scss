@@ -19,6 +19,23 @@
 	padding-bottom: $vertical-rhythm-0;
 }
 
+.entry-header-single-column,
+.entry-content-single-column { // Page template to display everything in a single column
+	@include tablet {
+		padding: 0 $space-1;
+	}
+
+	@include desktop {
+		padding: 0 $space-2;
+	}
+
+	display: block;
+	width: 100%;
+	max-width: $viewport-measure-small;
+	padding: 0 $space-0;
+	margin: 0 auto;
+}
+
 /* 404 page */
 
 // TODO test this
