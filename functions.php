@@ -330,8 +330,6 @@ function historiador_scripts() {
 	// Webfont stylesheet.
 	wp_enqueue_style( 'historiador-webfonts', get_theme_file_uri( 'webfonts.min.css' ), array( 'historiador-style' ), '1.20181128174405' );
 
-	wp_enqueue_script( 'historiador-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
-
 	$historiador_l10n = array(
 		'quote' => historiador_get_svg( array( 'icon' => 'quote-right' ) ),
 	);
@@ -349,8 +347,6 @@ function historiador_scripts() {
 	}
 
 	wp_enqueue_script( 'historiador-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '1.0', true );
-
-	wp_localize_script( 'historiador-skip-link-focus-fix', 'historiadorScreenReaderText', $historiador_l10n );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
