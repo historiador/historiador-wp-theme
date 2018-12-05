@@ -38,7 +38,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<?php get_sidebar( 'books'); ?>
+	<?php get_sidebar( 'books' ); ?>
 </div><!-- .wrap -->
 
 <?php

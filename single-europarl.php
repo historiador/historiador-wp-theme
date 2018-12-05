@@ -38,7 +38,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<?php get_sidebar( 'europarl'); ?>
+	<?php get_sidebar( 'europarl' ); ?>
 </div><!-- .wrap -->
 
 <?php

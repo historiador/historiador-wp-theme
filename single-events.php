@@ -38,7 +38,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<?php get_sidebar( 'events'); ?>
+	<?php get_sidebar( 'events' ); ?>
 </div><!-- .wrap -->
 
 <?php

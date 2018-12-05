@@ -38,7 +38,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<?php get_sidebar( 'podcasts'); ?>
+	<?php get_sidebar( 'podcasts' ); ?>
 </div><!-- .wrap -->
 
 <?php
