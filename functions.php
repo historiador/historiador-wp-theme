@@ -201,6 +201,18 @@ function historiador_widgets_init() {
 		)
 	);
 
+	register_sidebar(
+		array(
+			'name'          => __( 'Sidebar for Pages', 'historiador' ),
+			'id'            => 'sidebar-page_with_widgets',
+			'description'   => __( 'Add widgets here to appear in your sidebar on pages that use the "widgets" template.', 'historiador' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
 	// START DO NOT EDIT THIS COMMENT {{{
 	// Sidebars for custom post types
 	register_sidebar(
