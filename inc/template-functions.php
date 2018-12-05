@@ -39,9 +39,62 @@ function historiador_body_classes( $classes ) {
 	}
 
 	// Add class if sidebar is used.
-	if ( is_active_sidebar( 'sidebar-1' ) && ! is_page() ) {
+	if ( ( is_page_template( 'page-with_widgets.php' ) ) ) {
 		$classes[] = 'has-sidebar';
 	}
+
+	if ( is_search() ) {
+		if ( is_active_sidebar( 'sidebar-search' ) ) {
+			$classes[] = 'has-sidebar';
+		}
+	}
+
+	if ( is_category() || is_tag() || is_singular ( 'post' ) || ( is_home() && get_post_type() === 'post' ) ) {
+		if ( is_active_sidebar( 'sidebar-1' ) ) {
+			$classes[] = 'has-sidebar';
+		}
+	}
+
+
+	// START DO NOT EDIT THIS COMMENT {{{
+	// Custom post types: conditional ".has-sidebar" CSS class for body
+	if ( is_post_type_archive( 'blog_en' ) || is_singular ( 'blog_en' ) ) {
+		if ( is_active_sidebar( 'sidebar-blog_en' ) ) {
+			$classes[] = 'has-sidebar';
+		}
+	}
+
+	if ( is_post_type_archive( 'books' ) || is_singular ( 'books' ) ) {
+		if ( is_active_sidebar( 'sidebar-books' ) ) {
+			$classes[] = 'has-sidebar';
+		}
+	}
+
+	if ( is_post_type_archive( 'europarl' ) || is_singular ( 'europarl' ) ) {
+		if ( is_active_sidebar( 'sidebar-europarl' ) ) {
+			$classes[] = 'has-sidebar';
+		}
+	}
+
+	if ( is_post_type_archive( 'events' ) || is_singular ( 'events' ) ) {
+		if ( is_active_sidebar( 'sidebar-events' ) ) {
+			$classes[] = 'has-sidebar';
+		}
+	}
+
+	if ( is_post_type_archive( 'podcasts' ) || is_singular ( 'podcasts' ) ) {
+		if ( is_active_sidebar( 'sidebar-podcasts' ) ) {
+			$classes[] = 'has-sidebar';
+		}
+	}
+
+	if ( is_post_type_archive( 'videos' ) || is_singular ( 'videos' ) ) {
+		if ( is_active_sidebar( 'sidebar-videos' ) ) {
+			$classes[] = 'has-sidebar';
+		}
+	}
+
+	// END DO NOT EDIT THIS COMMENT }}}
 
 	// Add class for one or two column page layouts.
 	if ( is_page() || is_archive() ) {
