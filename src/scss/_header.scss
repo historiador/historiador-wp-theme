@@ -57,12 +57,20 @@ body.has-header-video {
 }
 
 .custom-logo-link {
+	@include tablet {
+		padding-right: $space-2;
+	}
+
 	display: inline-block;
 	padding-right: $space-1;
 	vertical-align: middle;
 	width: auto;
 
     img {
+		@include tablet {
+			max-width: 350px;
+		}
+
         display: inline-block;
         max-height: 80px;
         width: auto;
@@ -76,9 +84,12 @@ body.has-header-video {
     }
 }
 
-// TODO this whole selector is ugly. Review.
 body.home.title-tagline-hidden.has-header-image .custom-logo-link img,
 body.home.title-tagline-hidden.has-header-video .custom-logo-link img {
+	@include tablet {
+		max-width: 350px;
+	}
+
 	max-height: 200px;
 	max-width: 100%;
 }
@@ -88,6 +99,13 @@ body:not(.title-tagline-hidden) .site-branding-text {
 	vertical-align: middle;
 	background: rgba(0,0,0,.4); // TODO requires further testing.
 	padding: $space-1;
+}
+
+.title-tagline-hidden.home.has-header-image .custom-logo-link img,
+.title-tagline-hidden.home.has-header-video .custom-logo-link img {
+	@include tablet {
+		max-height: 200px;
+	}
 }
 
 .custom-header {
