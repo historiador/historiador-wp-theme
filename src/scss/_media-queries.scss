@@ -29,23 +29,6 @@
 
 @media screen and (min-width: 48em) {
 
-	/* Layout */
-
-	.has-sidebar:not(.error404) #primary {
-		float: left;
-		width: 58%;
-	}
-
-	.has-sidebar #secondary {
-		float: right;
-		padding-top: 0;
-		width: 36%;
-	}
-
-	.error404 #primary {
-		float: none;
-	}
-
 	/* Site Branding */
 
 	.custom-logo-link {

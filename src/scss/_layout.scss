@@ -5,8 +5,8 @@ html {
 }
 
 *,
-*:before,
-*:after {
+*::before,
+*::after {
 	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
 	-webkit-box-sizing: inherit;
 	-moz-box-sizing: inherit;
@@ -41,10 +41,29 @@ body {
 	max-width: $viewport-measure-small;
 	padding-left: $space-1;
 	padding-right: $space-1;
+
+	&::after {
+		clear: both;
+		content: "";
+		display: block;
+	}
 }
 
-.wrap:after {
-	clear: both;
-	content: "";
-	display: block;
+.has-sidebar {
+	@include tablet {
+		&:not(error404) #primary {
+			float: left;
+			width: 50%;
+		}
+		
+		#secondary {
+			float: right;
+			padding-top: 0;
+			width: 36%;
+		}
+	}
+}
+
+.error404 #primary {
+	float: none;
 }
