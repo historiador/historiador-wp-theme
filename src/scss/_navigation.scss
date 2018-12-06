@@ -3,7 +3,7 @@
 
 	@include tablet {
 		position: absolute;
-		padding: $space-1 0;
+		padding: $space-0 0;
 	}
 
 	bottom: 0;
@@ -51,7 +51,7 @@
 
 .admin-bar .site-navigation-fixed.navigation-top {
 	@include tablet {
-		top: 32px;
+		top: $space-2;
 	}
 }
 
@@ -150,10 +150,6 @@
 .main-navigation a {
 	@include tablet {
 		padding: $space-0;
-	}
-
-	@include desktop {
-		padding: $space-0 $space-1;
 	}
 
 	display: block;
