@@ -250,6 +250,10 @@ $border-color-light-2: #bababa;
     -moz-osx-font-smoothing: grayscale;
 }
 
+@mixin border-radius($degree) {
+    border-radius: $degree;
+}
+
 @mixin tablet {
     @media screen and (min-width: #{$viewport-size-tablet}) {
         @content;

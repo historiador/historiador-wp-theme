@@ -26,7 +26,8 @@ a {
 .entry-title a,
 .entry-meta a,
 .entry-footer .cat-links a,
-.entry-footer .tags-links a {
+.entry-footer .tags-links a,
+.site-info a {
 	color: $color-extra-link;
 
 	&:hover,

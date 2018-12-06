@@ -4,6 +4,17 @@
 
 	@include tablet {
 		margin-top: $vertical-rhythm-2;
+
+		.widget-column.footer-widget-1 {
+			float: left;
+			width: 36%;
+		}
+
+		.widget-column.footer-widget-2 {
+			float: right;
+			width: 58%;
+		}
+
 	}
 
 	@include desktop {
@@ -27,6 +38,14 @@
 
 .social-navigation {
     @include fluid-font-size($font-size-medium);
+
+	@include tablet {
+		clear: left;
+		float: left;
+		margin-bottom: 0;
+		width: 36%;
+	}
+
 	margin-bottom: $vertical-rhythm-0;
 
     ul {
@@ -40,60 +59,69 @@
     }
 
     a {
-        background-color: $color-base-fg-alt;
-        -webkit-border-radius: 40px;
-        border-radius: 40px;
-        color: $color-base-bg;
-        display: inline-block;
-        width: 40px;
-        height: 40px;
-        margin: 0 1em 0.5em 0; // TODO review
-        text-align: center;
+		@include border-radius(50%);
 
-        &:hover,
-        &:focus {
-            background-color: $color-base-link-alt; // TODO review
-        }
+		background-color: $color-base-fg-alt;
+		color: $color-base-bg;
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		margin: 0 1em 0.5em 0;
+		text-align: center;
+
+		&:hover,
+		&:focus {
+			background-color: $color-base-link-alt;
+		}
+
+//// NOTE in case we need some more colour
+////		&[href*="twitter.com"] { // specific to twitter links
+////			background-color: #1da1f2;
+////
+////			&:hover,
+////			&:focus {
+////				background-color: #3d7df2;
+////			}
+////		}
+////
+////		&[href*="facebook.com"] { // specific to facebook links
+////			background-color: #3b5998;
+////
+////			&:hover,
+////			&:focus {
+////				background-color: #2b49c8;
+////			}
+////		}
+////
+////		&[href*="instagram.com"] { // specific to instagram links
+////			background-color: #8a3ab9;
+////
+////			&:hover,
+////			&:focus {
+////				background-color: #ca3a89;
+////			}
+////		}
     }
 
-    .icon { // TODO review
-        width: 16px;
-        height: 16px;
-        top: 12px;
+    .icon {
+        width: 20px;
+        height: 20px;
+        top: 10px;
         vertical-align: top;
     }
+
+	+ .site-info {
+		margin-left: 6%;
+	}
 }
 
 .site-info {
+	@include tablet {
+		float: left;
+		padding: $space-0 0 0;
+		width: 58%;
+	}
+
 	font-size: $font-size-small;
 	margin-bottom: 1em;
-
-    // No need to define links here, especially if they follow the
-    // general styling norms.  TODO move to _links.scss and/or
-    // delete/adapt accordingly.
-    a {
-        color: $color-extra-link;
-
-        &:hover,
-        &:focus {
-            color: $color-extra-link-alt;
-        }
-    }
-
-    // TODO remove these in the html/templates, then here
-    .sep {
-        margin: 0;
-        display: block;
-        visibility: hidden;
-        height: 0;
-        width: 100%;
-    }
-
-    span[role=separator] {
-        padding: 0 0.2em 0 0.4em;
-    }
-
-    span[role=separator]::before {
-        content: '\002f';
-    }
 }
