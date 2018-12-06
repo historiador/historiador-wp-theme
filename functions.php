@@ -465,7 +465,7 @@ add_filter( 'widget_tag_cloud_args', 'historiador_widget_tag_cloud_args' );
  * Strip embedded styles from blog posts.  Adapted from source:
  * https://wordpress.stackexchange.com/questions/91949/removing-any-and-all-inline-styles-from-the-content
  */
-function historiador_strip_content_inline_styles ( $content ) {
+function historiador_strip_content_inline_styles( $content ) {
     $content = preg_replace('/ (style|align)=.*("|\')/','',$content);
     return $content;
 }
