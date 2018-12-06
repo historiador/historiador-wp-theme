@@ -62,7 +62,7 @@ h6 {
 }
 
 p {
-	margin: 0 0 $vertical-rhythm-0;
+	margin: 0 0 $vertical-rhythm-1;
 	padding: 0;
 }
 
@@ -174,11 +174,8 @@ div + h2,
 div + h3,
 small + h2,
 small + h3 {
-    @include tablet {
-        margin-top: $vertical-rhythm-1;
-    }
-
-    margin-top: $vertical-rhythm-0;
+    margin-top: $vertical-rhythm-2;
+    margin-bottom: $vertical-rhythm-0;
 }
 
 h1 + h2,
