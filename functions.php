@@ -462,6 +462,16 @@ function historiador_widget_tag_cloud_args( $args ) {
 add_filter( 'widget_tag_cloud_args', 'historiador_widget_tag_cloud_args' );
 
 /**
+ * Strip embedded styles from blog posts.  Adapted from source:
+ * https://wordpress.stackexchange.com/questions/91949/removing-any-and-all-inline-styles-from-the-content
+ */
+function historiador_strip_content_inline_styles ( $content ) {
+    $content = preg_replace('/ (style|align)=.*("|\')/','',$content);
+    return $content;
+}
+add_filter('the_content', 'historiador_strip_content_inline_styles', 20);
+
+/**
  * Implement the Custom Header feature.
  */
 require get_parent_theme_file_path( '/inc/custom-header.php' );
