@@ -54,3 +54,26 @@
 .search .page-content .search-form {
 	margin-bottom: $vertical-rhythm-1;
 }
+
+
+
+// TODO pending review
+@include tablet {
+	/* Pages */
+
+	.page.page-one-column .entry-header,
+	.historiador-front-page.page-one-column .entry-header,
+	.archive.page-one-column:not(.has-sidebar) .page-header {
+		margin-bottom: 4em;
+	}
+
+	.page:not(.home) #content {
+		padding-bottom: 3.25em;
+	}
+
+	/* 404 page */
+
+	.error404 .page-content {
+		padding-bottom: 9em;
+	}
+}
