@@ -1,5 +1,19 @@
 /* Post Landing Page */
 
+.site-content {
+	@include tablet {
+		padding: $vertical-rhythm-2 0 0;
+	}
+
+	@include desktop {
+		padding: $vertical-rhythm-3 0 0;
+	}
+
+	padding: $vertical-rhythm-1 0 0;
+}
+
+/* Entry content */
+
 .sticky {
 	position: relative;
 }
@@ -9,6 +23,13 @@
 }
 
 .sticky .icon-thumb-tack { // TODO review this
+	@include tablet {
+		height: 23px;
+		left: -2.5em;
+		top: 1.5em;
+		width: 32px;
+	}
+
 	display: block;
 	height: 18px;
 	left: -1.5em;
@@ -47,15 +68,15 @@ body.page:not(.historiador-front-page) .entry-title {
 	font-weight: 400;
 }
 
-.byline,
-.updated:not(.published) { // TODO will there be many authors?  Else remove bylines.
-	display: none;
-}
-
-.single .byline,
-.group-blog .byline { // TODO review need for bylines.
-	display: inline;
-}
+//// .byline,
+//// .updated:not(.published) { // TODO will there be many authors?  Else remove bylines.
+//// 	display: none;
+//// }
+//// 
+//// .single .byline,
+//// .group-blog .byline { // TODO review need for bylines.
+//// 	display: inline;
+//// }
 
 .pagination,
 .comments-pagination {
@@ -73,6 +94,10 @@ body.page:not(.historiador-front-page) .entry-title {
 }
 
 .comments-pagination {
+	@include tablet {
+		clear: both;
+	}
+
 	border: 0;
 }
 
@@ -190,6 +215,11 @@ body:not(.historiador-front-page) .entry-header {
 
 /* Single Post */
 
+.single-post .entry-title,
+.page .entry-title {
+	@include fluid-font-size($font-size-xxxlarge)
+}
+
 .single-post:not(.has-sidebar) #primary,
 .page.page-one-column:not(.historiador-front-page) #primary,
 .archive.page-one-column:not(.has-sidebar) .page-header,
@@ -217,7 +247,7 @@ body:not(.historiador-front-page) .entry-header {
 }
 
 .page-links .page-number {
-	color: $color-base-fg-alt; // TODO review in accordance with the rest of pagination styles
+	color: $color-base-fg-alt;
 	display: inline-block;
 	padding: $space-0 $space-1;
 }
@@ -227,12 +257,17 @@ body:not(.historiador-front-page) .entry-header {
 }
 
 .page-links a .page-number {
-	color: $color-base-fg; // TODO review in accordance with the rest of pagination styles
+	color: $color-base-fg;
 }
 
 /* Entry footer */
 
 .entry-footer {
+	@include tablet {
+		display: table;
+		width: 100%;
+	}
+
 	border-bottom: 1px solid $border-color-dark-2;
 	border-top: 1px solid $border-color-dark-2;
 	margin-top: $space-2;
@@ -250,6 +285,14 @@ body:not(.historiador-front-page) .entry-header {
 	text-transform: uppercase;
 }
 
+.entry-footer .cat-tags-links {
+	@include tablet {
+		display: table-cell;
+		vertical-align: middle;
+		width: 100%;
+	}
+}
+
 .entry-footer .cat-links + .tags-links {
 	margin-top: $space-1;
 }
@@ -264,11 +307,22 @@ body:not(.historiador-front-page) .entry-header {
 }
 
 .entry-footer .edit-link {
+	@include tablet {
+		display: table-cell;
+		text-align: right;
+		vertical-align: middle;
+	}
+
 	display: inline-block;
 }
 
 .entry-footer .edit-link a.post-edit-link {
     @include fluid-font-size($font-size-small);
+
+	@include tablet {
+		margin-top: 0;
+		margin-left: $space-1;
+	}
 
 	background-color: $color-base-bg;
 	border-radius: 2px;
@@ -279,49 +333,20 @@ body:not(.historiador-front-page) .entry-header {
 	margin-top: $vertical-rhythm-1;
 	padding: $space-1 $space-2;
 	white-space: nowrap;
-}
 
-.entry-footer .edit-link a.post-edit-link {
     &:hover,
     &:focus {
         background-color: $color-base-bg-alt;
     }
 }
 
-// TODO any chance we will be using those?  Remove them from here.
-
-/* Post Formats */
-
-.blog .format-status .entry-title,
-.archive .format-status .entry-title,
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-	display: none;
-}
-
-.format-quote blockquote {
-    @include fluid-font-size($font-size-large);
-
-	color: $color-base-fg;
-	overflow: visible;
-	position: relative;
-}
-
-.format-quote blockquote .icon {
-	display: block;
-	height: 20px;
-	left: -1.25em;
-	position: absolute;
-	top: 0.4em;
-	-webkit-transform: scale(-1, 1);
-	-ms-transform: scale(-1, 1);
-	transform: scale(-1, 1);
-	width: 20px;
-}
-
 /* Post Navigation */
 
 .post-navigation {
+	@include tablet {
+		clear: both;
+	}
+
 	font-weight: 700;
 	margin: $vertical-rhythm-2 0;
 }
@@ -343,11 +368,30 @@ body:not(.historiador-front-page) .entry-header {
     @include fluid-font-size($font-size-medium);
 }
 
+.post-navigation .nav-previous {
+	@include tablet {
+		float: left;
+		width: 50%;
+	}
+}
+
 .post-navigation .nav-next {
+	@include tablet {
+		float: right;
+		text-align: right;
+		width: 50%;
+		margin-top: 0;
+	}
+
 	margin-top: $vertical-rhythm-1;
 }
 
-// TODO why these overly specific selectors?  Improve!
+.nav-next { // TODO candidate for removal
+	@include tablet {
+		margin-top: 0;
+	}
+}
+
 .nav-links .nav-previous .nav-title .nav-title-icon-wrapper {
 	margin-right: $space-0;
 }
@@ -358,162 +402,145 @@ body:not(.historiador-front-page) .entry-header {
 
 
 
+//// TODO embed these in their appropriate selectors
+/* Posts */
 
-// TODO pending review
-@include tablet {
-	/* Posts */
+/* Blog, archive, search */
 
-	.site-content {
-		padding: 5.5em 0 0;
-	}
-
-	.single-post .entry-title,
-	.page .entry-title {
-		font-size: 26px;
-		font-size: 1.625rem;
-	}
-
-	.comments-pagination,
-	.post-navigation {
-		clear: both;
-	}
-
-	.post-navigation .nav-previous {
-		float: left;
-		width: 50%;
-	}
-
-	.post-navigation .nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
-	}
-
-	.nav-next,
-	.post-navigation .nav-next {
-		margin-top: 0;
-	}
-
-	/* Blog, archive, search */
-
-	.sticky .icon-thumb-tack {
-		height: 23px;
-		left: -2.5em;
-		top: 1.5em;
-		width: 32px;
-	}
-
-	body:not(.has-sidebar):not(.page-one-column) .page-header,
-	body.has-sidebar.error404 #primary .page-header,
-	body.page-two-column:not(.archive) #primary .entry-header,
-	body.page-two-column.archive:not(.has-sidebar) #primary .page-header {
+body:not(.has-sidebar):not(.page-one-column) .page-header,
+body.has-sidebar.error404 #primary .page-header,
+body.page-two-column:not(.archive) #primary .entry-header,
+body.page-two-column.archive:not(.has-sidebar) #primary .page-header {
+	@include tablet {
 		float: left;
 		width: 36%;
 	}
+}
 
-	.blog:not(.has-sidebar) #primary article,
-	.archive:not(.page-one-column):not(.has-sidebar) #primary article,
-	.search:not(.has-sidebar) #primary article,
-	.error404:not(.has-sidebar) #primary .page-content,
-	.error404.has-sidebar #primary .page-content,
-	body.page-two-column:not(.archive) #primary .entry-content,
-	body.page-two-column #comments {
+.blog:not(.has-sidebar) #primary article,
+.archive:not(.page-one-column):not(.has-sidebar) #primary article,
+.search:not(.has-sidebar) #primary article,
+.error404:not(.has-sidebar) #primary .page-content,
+.error404.has-sidebar #primary .page-content,
+body.page-two-column:not(.archive) #primary .entry-content,
+body.page-two-column #comments {
+	@include tablet {
 		float: right;
 		width: 58%;
 	}
+}
 
-	.blog .site-main > article,
-	.archive .site-main > article,
-	.search .site-main > article {
+.blog .site-main > article,
+.archive .site-main > article,
+.search .site-main > article {
+	@include tablet {
 		padding-bottom: 4em;
 	}
+}
 
-	.navigation.pagination {
+.navigation.pagination {
+	@include tablet {
 		clear: both;
 		float: right;
 		width: 58%;
 	}
+}
 
-	.has-sidebar .navigation.pagination,
-	.archive.page-one-column:not(.has-sidebar) .navigation.pagination {
+.has-sidebar .navigation.pagination,
+.archive.page-one-column:not(.has-sidebar) .navigation.pagination {
+	@include tablet {
 		float: none;
 		width: 100%;
 	}
-
-	.entry-footer {
-		display: table;
-		width: 100%;
-	}
-
-	.entry-footer .cat-tags-links {
-		display: table-cell;
-		vertical-align: middle;
-		width: 100%;
-	}
-
-	.entry-footer .edit-link {
-		display: table-cell;
-		text-align: right;
-		vertical-align: middle;
-	}
-
-	.entry-footer .edit-link a.post-edit-link {
-		margin-top: 0;
-		margin-left: 1em;
-	}
-
-	/* Entry content */
-
-	/* without sidebar */
-
-	:not(.has-sidebar) .entry-content blockquote.alignleft {
-		margin-left: -17.5%;
-		width: 48%;
-	}
-
-	:not(.has-sidebar) .entry-content blockquote.alignright {
-		margin-right: -17.5%;
-		width: 48%;
-	}
-
-	/* with sidebar */
-
-	.has-sidebar .entry-content blockquote.alignleft {
-		margin-left: 0;
-		width: 34%;
-	}
-
-	.has-sidebar .entry-content blockquote.alignright {
-		margin-right: 0;
-		width: 34%;
-	}
-
-	.has-sidebar #primary .entry-content blockquote.alignright.below-entry-meta {
-		margin-right: -72.5%;
-		width: 62%;
-	}
-
-	/* blog and archive */
-
-	.blog:not(.has-sidebar) .entry-content blockquote.alignleft,
-	.historiador-front-page.page-two-column .entry-content blockquote.alignleft,
-	.archive:not(.has-sidebar) .entry-content blockquote.alignleft,
-	.page-two-column .entry-content blockquote.alignleft {
-		margin-left: -72.5%;
-		width: 62%;
-	}
-
-	.blog:not(.has-sidebar) .entry-content blockquote.alignright,
-	.historiador-front-page.page-two-column .entry-content blockquote.alignright,
-	.archive:not(.has-sidebar) .entry-content blockquote.alignright,
-	.page-two-column .entry-content blockquote.alignright {
-		margin-right: 0;
-		width: 36%;
-	}
-
-	/* Post formats */
-
-	.format-quote blockquote .icon {
-		left: -1.5em;
-	}
 }
+
+///// POST FORMATS
+//// /* Post Formats */
+//// 
+//// .blog .format-status .entry-title,
+//// .archive .format-status .entry-title,
+//// .blog .format-aside .entry-title,
+//// .archive .format-aside .entry-title {
+//// 	display: none;
+//// }
+//// 
+//// .format-quote blockquote {
+////     @include fluid-font-size($font-size-large);
+//// 
+//// 	color: $color-base-fg;
+//// 	overflow: visible;
+//// 	position: relative;
+//// }
+//// 
+//// .format-quote blockquote .icon {
+////	@include tablet {
+////		left: -1.5em;
+////	}
+//// 	display: block;
+//// 	height: 20px;
+//// 	left: -1.25em;
+//// 	position: absolute;
+//// 	top: 0.4em;
+//// 	-webkit-transform: scale(-1, 1);
+//// 	-ms-transform: scale(-1, 1);
+//// 	transform: scale(-1, 1);
+//// 	width: 20px;
+//// }
+
+///// BLOCKQUOTES WITH ALIGN PROPERTY
+//// /* without sidebar */
+//// 
+//// :not(.has-sidebar) {
+//// 	@include tablet {
+//// 		& .entry-content blockquote.alignleft {
+//// 			margin-left: -17.5%;
+//// 			width: 48%;
+//// 		}
+//// 
+//// 		& .entry-content blockquote.alignright {
+//// 			margin-right: -17.5%;
+//// 			width: 48%;
+//// 		}
+//// 	}
+//// }
+//// 
+//// /* with sidebar */
+//// 
+//// .has-sidebar {
+//// 	@include tablet {
+//// 		.entry-content blockquote.alignleft {
+//// 			margin-left: 0;
+//// 			width: 34%;
+//// 		}
+//// 
+//// 		.entry-content blockquote.alignright {
+//// 			margin-right: 0;
+//// 			width: 34%;
+//// 		}
+//// 	}
+//// }
+//// 
+//// .has-sidebar #primary .entry-content blockquote.alignright.below-entry-meta {
+//// 	margin-right: -72.5%;
+//// 	width: 62%;
+//// }
+//// 
+//// /* blog and archive */
+//// 
+//// .blog:not(.has-sidebar) .entry-content blockquote.alignleft,
+//// .historiador-front-page.page-two-column .entry-content blockquote.alignleft,
+//// .archive:not(.has-sidebar) .entry-content blockquote.alignleft,
+//// .page-two-column .entry-content blockquote.alignleft {
+//// 	margin-left: -72.5%;
+//// 	width: 62%;
+//// }
+//// 
+//// .blog:not(.has-sidebar) .entry-content blockquote.alignright,
+//// .historiador-front-page.page-two-column .entry-content blockquote.alignright,
+//// .archive:not(.has-sidebar) .entry-content blockquote.alignright,
+//// .page-two-column .entry-content blockquote.alignright {
+//// 	margin-right: 0;
+//// 	width: 36%;
+//// }
+
+
