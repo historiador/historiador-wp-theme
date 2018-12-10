@@ -16,6 +16,9 @@
 }
 
 .page:not(.home) #content {
+	@include tablet {
+		padding-bottom: 3.25em; // TODO review ad hoc measurement
+	}
 	padding-bottom: $vertical-rhythm-0;
 }
 
@@ -46,6 +49,10 @@
 
 // TODO test this
 .error404 .page-content {
+	@include tablet {
+		padding-bottom: 9em; // TODO review ad hoc measurement
+	}
+
 	padding-bottom: $vertical-rhythm-2;
 }
 
@@ -56,24 +63,10 @@
 }
 
 
-
-// TODO pending review
-@include tablet {
-	/* Pages */
-
-	.page.page-one-column .entry-header,
-	.historiador-front-page.page-one-column .entry-header,
-	.archive.page-one-column:not(.has-sidebar) .page-header {
-		margin-bottom: 4em;
-	}
-
-	.page:not(.home) #content {
-		padding-bottom: 3.25em;
-	}
-
-	/* 404 page */
-
-	.error404 .page-content {
-		padding-bottom: 9em;
+.page.page-one-column .entry-header,
+.historiador-front-page.page-one-column .entry-header,
+.archive.page-one-column:not(.has-sidebar) .page-header {
+	@include tablet {
+		margin-bottom: 4em; // TODO review ad hoc measurement
 	}
 }
