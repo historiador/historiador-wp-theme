@@ -107,79 +107,97 @@
 }
 
 
+// TODO embed media queries in their appropriate selectors
+/* Front Page */
 
-
-// TODO pending review
-@include tablet {
-	/* Front Page */
-
-	.historiador-front-page.has-header-image .site-branding,
-	.historiador-front-page.has-header-video .site-branding,
-	.home.blog.has-header-image .site-branding,
-	.home.blog.has-header-video .site-branding {
-		margin-bottom: 70px;
+.historiador-front-page.has-header-image .site-branding,
+.historiador-front-page.has-header-video .site-branding,
+.home.blog.has-header-image .site-branding,
+.home.blog.has-header-video .site-branding {
+	@include tablet {
+		margin-bottom: 70px; // TODO review ad hoc measurement
 	}
+}
 
-	.historiador-front-page.has-header-image .custom-header-media,
-	.historiador-front-page.has-header-video .custom-header-media,
-	.home.blog.has-header-image .custom-header-media,
-	.home.blog.has-header-video .custom-header-media {
+.historiador-front-page.has-header-image .custom-header-media,
+.historiador-front-page.has-header-video .custom-header-media,
+.home.blog.has-header-image .custom-header-media,
+.home.blog.has-header-video .custom-header-media {
+	@include tablet {
 		height: 1200px;
 		height: 100vh;
 		max-height: 100%;
 		overflow: hidden;
 	}
+}
 
-	.historiador-front-page.has-header-image .custom-header-media:before,
-	.historiador-front-page.has-header-video .custom-header-media:before,
-	.home.blog.has-header-image .custom-header-media:before,
-	.home.blog.has-header-video .custom-header-media:before {
+.historiador-front-page.has-header-image .custom-header-media:before,
+.historiador-front-page.has-header-video .custom-header-media:before,
+.home.blog.has-header-image .custom-header-media:before,
+.home.blog.has-header-video .custom-header-media:before {
+	@include tablet {
 		height: 33%;
 	}
+}
 
-	.admin-bar.historiador-front-page.has-header-image .custom-header-media,
-	.admin-bar.historiador-front-page.has-header-video .custom-header-media,
-	.admin-bar.home.blog.has-header-image .custom-header-media,
-	.admin-bar.home.blog.has-header-video .custom-header-media {
+.admin-bar.historiador-front-page.has-header-image .custom-header-media,
+.admin-bar.historiador-front-page.has-header-video .custom-header-media,
+.admin-bar.home.blog.has-header-image .custom-header-media,
+.admin-bar.home.blog.has-header-video .custom-header-media {
+	@include tablet {
 		height: calc(100vh - 32px);
 	}
+}
 
-	.page-two-column .panel-content .entry-header {
+.page-two-column .panel-content .entry-header {
+	@include tablet {
 		float: left;
 		width: 36%;
 	}
+}
 
-	.page-two-column .panel-content .entry-content {
+.page-two-column .panel-content .entry-content {
+	@include tablet {
 		float: right;
 		width: 58%;
 	}
+}
 
-	/* Front Page - Recent Posts */
+/* Front Page - Recent Posts */
 
-	.page-two-column .panel-content .recent-posts {
+.page-two-column .panel-content .recent-posts {
+	@include tablet {
 		clear: right;
 		float: right;
 		width: 58%;
 	}
+}
 
-	.panel-content .recent-posts article {
+.panel-content .recent-posts article {
+	@include tablet {
 		margin-bottom: 4em;
 	}
+}
 
-	.panel-content .recent-posts .entry-header,
-	.page-two-column #primary .panel-content .recent-posts .entry-header,
-	.panel-content .recent-posts .entry-content,
-	.page-two-column #primary .panel-content .recent-posts .entry-content {
+.panel-content .recent-posts .entry-header,
+.page-two-column #primary .panel-content .recent-posts .entry-header,
+.panel-content .recent-posts .entry-content,
+.page-two-column #primary .panel-content .recent-posts .entry-content {
+	@include tablet {
 		float: none;
 		width: 100%;
 	}
+}
 
-	.panel-content .recent-posts .entry-header {
+.panel-content .recent-posts .entry-header {
+	@include tablet {
 		margin-bottom: 1.5em;
 	}
-
-	.page .panel-content .recent-posts .entry-title {
-		font-size: 26px;
-		font-size: 1.625rem;
-	}
 }
+
+//// .page .panel-content .recent-posts .entry-title {
+//// 	@include tablet {
+//// 		font-size: 26px;
+//// 		font-size: 1.625rem;
+//// 	}
+//// }
