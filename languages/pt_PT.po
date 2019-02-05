@@ -1,0 +1,512 @@
+# Copyright (C) 2019 Protesilaos Stavrou,  André Góis Fernandes
+# This file is distributed under the GNU General Public License v3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Historiador 1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/historiador-wp-"
+"theme\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2019-02-05T20:01:41+00:00\n"
+"PO-Revision-Date: 2019-02-05 22:41+0000\n"
+"X-Generator: Poedit 2.2.1\n"
+"X-Domain: historiador\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: pt_PT\n"
+
+#. Theme Name of the theme
+msgid "Historiador"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "https://github.com/historiador/historiador-wp-theme"
+msgstr "https://github.com/historiador/historiador-wp-theme"
+
+#. Description of the theme
+msgid "Historiador is a WordPress theme based on the default Twenty Seventeen."
+msgstr ""
+"Historiador é um tema de WordPress baseado no tema predefinido Twenty "
+"Seventeen."
+
+#. Author of the theme
+msgid "Protesilaos Stavrou,  André Góis Fernandes"
+msgstr "Protesilaos Stavrou,  André Góis Fernandes"
+
+#. Author URI of the theme
+msgid "https://github.com/historiador/"
+msgstr "https://github.com/historiador/"
+
+#: functions.php:63 template-parts/navigation/navigation-top.php:10
+msgid "Top Menu"
+msgstr "Top Menu"
+
+#: functions.php:64
+msgid "Social Links Menu"
+msgstr "Menu Links Sociais"
+
+#: functions.php:158
+msgid "Blog PT Sidebar"
+msgstr "Blog PT Sidebar"
+
+#: functions.php:160
+msgid ""
+"Add widgets here to appear in your sidebar on PT blog posts and archive "
+"pages."
+msgstr ""
+"Adicionar aqui widgets para to aparecerem na barra lateral das páginas e "
+"arquivo do Blog PT."
+
+#: functions.php:170
+msgid "Footer 1"
+msgstr "Rodapé 1"
+
+#: functions.php:172 functions.php:184
+msgid "Add widgets here to appear in your footer."
+msgstr "Adicionar aqui widgets para aparecerem no rodapé."
+
+#: functions.php:182
+msgid "Footer 2"
+msgstr "Rodapé 2"
+
+#: functions.php:194
+msgid "Search results Sidebar"
+msgstr "Barra lateral com resultados de pesquisa"
+
+#: functions.php:196
+msgid ""
+"Add widgets here to appear in your sidebar on pages that display search "
+"results."
+msgstr ""
+"Adicionar aqui widgets para mostrar na barra lateral em páginas que mostrem "
+"resultados de pesquisa."
+
+#: functions.php:206
+msgid "Sidebar for Pages"
+msgstr "Barra lateral para páginas"
+
+#: functions.php:208
+msgid ""
+"Add widgets here to appear in your sidebar on pages that use the \"widgets\" "
+"template."
+msgstr ""
+"Adicionar aqui widgets para mostrar na barra lateral em páginas que usem o "
+"template “widgets”."
+
+#: functions.php:220
+msgid "Blog EN Sidebar"
+msgstr "Barra lateral para o Blog EN"
+
+#: functions.php:222
+msgid ""
+"Add widgets here to appear in your sidebar on \"The Man from Lisbon\" posts "
+"and archive pages."
+msgstr ""
+"Adicionar aqui widgets para mostrar na barra lateral em publicações e no "
+"arquivo de “The Man from Lisbon”."
+
+#: functions.php:232
+msgid "Books Sidebar"
+msgstr "Barra lateral para Livros"
+
+#: functions.php:234
+msgid ""
+"Add widgets here to appear in your sidebar on Book posts and archive pages."
+msgstr ""
+"Adicionar aqui widgets para mostrar na barra lateral em publicações e no "
+"arquivo de “Livros”."
+
+#: functions.php:244
+msgid "Europarl Sidebar"
+msgstr "Barra lateral para Europarl"
+
+#: functions.php:246
+msgid ""
+"Add widgets here to appear in your sidebar on Europarl posts and archive "
+"pages."
+msgstr ""
+"Adicionar aqui widgets para mostrar na barra lateral em publicações e no "
+"arquivo de “Europarl”."
+
+#: functions.php:256
+msgid "Events Sidebar"
+msgstr "Barra lateral para Eventos"
+
+#: functions.php:258
+msgid ""
+"Add widgets here to appear in your sidebar on Event posts and archive pages."
+msgstr ""
+"Adicionar aqui widgets para mostrar na barra lateral em publicações e no "
+"arquivo de “Eventos”."
+
+#: functions.php:268
+msgid "Podcast Sidebar"
+msgstr "Barra lateral para Podcast"
+
+#: functions.php:270
+msgid ""
+"Add widgets here to appear in your sidebar on Podcast posts and archive "
+"pages."
+msgstr ""
+"Adicionar aqui widgets para mostrar na barra lateral em publicações e no "
+"arquivo de “Podcasts”."
+
+#: functions.php:280
+msgid "Videos Sidebar"
+msgstr "Barra lateral para Vídeos"
+
+#: functions.php:282
+msgid ""
+"Add widgets here to appear in your sidebar on Video posts and archive pages."
+msgstr ""
+"Adicionar aqui widgets para mostrar na barra lateral em publicações e no "
+"arquivo de “Vídeos”."
+
+#. translators: %s: Name of current post
+#: functions.php:309 template-parts/page/content-front-page.php:40
+#: template-parts/page/content-front-page-panels.php:43
+#: template-parts/post/content-gallery.php:69
+#: template-parts/post/content.php:55 template-parts/post/content-audio.php:82
+#: template-parts/post/content-video.php:81
+#: template-parts/post/content-image.php:59
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Continuar a ler<span class=“screen-reader-text”> “%s”</span>"
+
+#: functions.php:353
+msgid "Expand child menu"
+msgstr "Expandir menu interior"
+
+#: functions.php:354
+msgid "Collapse child menu"
+msgstr "Fechar menu interior"
+
+#: archive-videos.php:46 index.php:50 archive.php:46 archive-blog_en.php:46
+#: archive-podcasts.php:46 search.php:43 archive-books.php:46
+#: archive-europarl.php:46 archive-events.php:46
+msgid "Previous page"
+msgstr "Página anterior"
+
+#: archive-videos.php:47 index.php:51 archive.php:47 archive-blog_en.php:47
+#: archive-podcasts.php:47 search.php:44 archive-books.php:47
+#: archive-europarl.php:47 archive-events.php:47
+msgid "Next page"
+msgstr "Próxima página"
+
+#: archive-videos.php:48 index.php:52 archive.php:48 archive-blog_en.php:48
+#: archive-podcasts.php:48 search.php:45 archive-books.php:48
+#: archive-europarl.php:48 archive-events.php:48
+msgid "Page"
+msgstr "Página"
+
+#: sidebar-podcasts.php:17
+msgid "Sidebar for Podcasts"
+msgstr "Barra lateral para Podcasts"
+
+#: sidebar-blog_en.php:16
+msgid "Sidebar for The Man from Lisbon"
+msgstr "Barra lateral para The Man from Lisbon"
+
+#: 404.php:20
+msgid "ERROR 404: Page cannot be found."
+msgstr "ERRO 404: Página não encontrada."
+
+#: 404.php:23
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr ""
+"Parece que nada foi encontrado neste endereço. Talvez tentar uma pesquisa?"
+
+#: sidebar-page_with_widgets.php:17 sidebar-search.php:17
+msgid "Sidebar for search results"
+msgstr "Barra lateral para resultados de pesquisa"
+
+#: inc/icon-functions.php:38
+msgid "Please define default parameters in the form of an array."
+msgstr "Por favor defina os parâmetros por omissão na forma de um array."
+
+#: inc/icon-functions.php:43
+msgid "Please define an SVG icon filename."
+msgstr "Por favor defina um nome de ficheiro para icon SVG."
+
+#: inc/customizer.php:37
+msgid "Historiador Options"
+msgstr "Opções Historiador"
+
+#: inc/customizer.php:52
+msgid "Page Layout"
+msgstr "Layout da página"
+
+#: inc/customizer.php:55
+msgid ""
+"When the two-column layout is assigned, the page title is in one column and "
+"content is in the other."
+msgstr ""
+"Quando um layout de duas colunas é selecionado, o título da página é "
+"mostrado numa coluna e o conteúdo noutra."
+
+#: inc/customizer.php:57 inc/customizer.php:117
+msgid "One Column"
+msgstr "Uma coluna"
+
+#: inc/customizer.php:58 inc/customizer.php:118
+msgid "Two Column"
+msgstr "Duas colunas"
+
+#. translators: %d is the front page section number
+#: inc/customizer.php:84
+msgid "Front Page Section %d Content"
+msgstr "Conteúdo da secção da página principal"
+
+#: inc/customizer.php:85
+msgid ""
+"Select pages to feature in each area from the dropdowns. Add an image to a "
+"section by setting a featured image in the page editor. Empty sections will "
+"not be displayed."
+msgstr ""
+"Selecionar páginas a destacar em cada área com as caixas de seleção. "
+"Adicione uma imagem a uma secção selecionando uma imagem de destaque no "
+"editor da página. Secções vazias não serão mostradas."
+
+#: inc/custom-header.php:51
+msgid "Default Header Image"
+msgstr "Imagem de cabeçalho por omissão"
+
+#: inc/custom-header.php:122
+msgid "Play background video"
+msgstr "Play background video"
+
+#: inc/custom-header.php:123
+msgid "Pause background video"
+msgstr "Pause background video"
+
+#. translators: %s: post date
+#: inc/template-tags.php:53
+msgid "<span class=\"screen-reader-text\">Posted on</span> %s"
+msgstr "<span class=“screen-reader-text”>Publicado em</span> %s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:67
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:86
+msgid "Categories"
+msgstr "Categorias"
+
+#: inc/template-tags.php:90
+msgid "Tags"
+msgstr "Etiquetas"
+
+#. translators: %s: Name of current post
+#: inc/template-tags.php:118
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Editar<span class=“screen-reader-text”> “%s”</span>"
+
+#: inc/template-tags.php:152
+msgid "Front Page Section %1$s Placeholder"
+msgstr "Espaço da página reservado para %1$s"
+
+#: inc/back-compat.php:35 inc/back-compat.php:46 inc/back-compat.php:60
+msgid ""
+"Historiador requires at least WordPress version 4.7. You are running version "
+"%s. Please upgrade and try again."
+msgstr ""
+"Historiador precisa do Wordpress versão 4.7 ou superior. Está a correr a "
+"versão %s. Faça upgrade e tente de novo."
+
+#: single-events.php:31
+msgid "Previous Event"
+msgstr "Evento Anterior"
+
+#: single-events.php:31 comments.php:69 single-europarl.php:31
+#: single-podcasts.php:31 single-books.php:31 single.php:31
+#: single-blog_en.php:31 single-videos.php:31
+msgid "Previous"
+msgstr "Anterior"
+
+#: single-events.php:32
+msgid "Next Event"
+msgstr "Próximo evento"
+
+#: single-events.php:32 comments.php:70 single-europarl.php:32
+#: single-podcasts.php:32 single-books.php:32 single.php:32
+#: single-blog_en.php:32 single-videos.php:32
+msgid "Next"
+msgstr "Próximo"
+
+#: index.php:25
+msgid "Posts"
+msgstr "Publicações"
+
+#: sidebar-events.php:17
+msgid "Sidebar for Events"
+msgstr "Barra lateral para eventos"
+
+#. translators: %s: post title
+#: comments.php:35
+msgctxt "comments title"
+msgid "One Reply to &ldquo;%s&rdquo;"
+msgstr "Uma Resposta a &ldquo;%s&rdquo;"
+
+#. translators: 1: number of comments, 2: post title
+#: comments.php:39
+msgctxt "comments title"
+msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s Resposta a &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s Respostas a &ldquo;%2$s&rdquo;"
+
+#: comments.php:60
+msgid "Reply"
+msgstr "Responder"
+
+#: comments.php:80
+msgid "Comments are closed."
+msgstr "Os comentários estão fechados."
+
+#: single-europarl.php:31 single-podcasts.php:31
+msgid "Previous Podcast"
+msgstr "Podcast anterior"
+
+#: single-europarl.php:32 single-podcasts.php:32
+msgid "Next Podcast"
+msgstr "Próximo Podcast"
+
+#. Template Name of the theme
+msgid "Single Column"
+msgstr "Coluna única"
+
+#: search.php:17
+msgid "Search Results for: %s"
+msgstr "Resultados de pesquisa para: %s"
+
+#: search.php:19 template-parts/post/content-none.php:15
+msgid "Nothing Found"
+msgstr "Nada encontrado"
+
+#: search.php:52
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Desculpe, mas não encontrámos o que procura. Tente novamente com outras "
+"palavras-chave."
+
+#: header.php:25
+msgid "Skip to content"
+msgstr "Saltar para conteúdo"
+
+#: template-parts/footer/footer-widgets.php:16
+msgid "Footer"
+msgstr "Rodapé"
+
+#: template-parts/footer/site-info.php:16
+msgid "https://wordpress.org/"
+msgstr "https://wordpress.org/"
+
+#: template-parts/footer/site-info.php:17
+msgid "Powered by %s"
+msgstr "Feito com %s"
+
+#: template-parts/footer/site-info.php:22
+msgid "https://github.com/historiador/historiador-wp-theme/"
+msgstr "https://github.com/historiador/historiador-wp-theme/"
+
+#: template-parts/footer/site-info.php:23
+msgid "Running the %s"
+msgstr "A correr o"
+
+#: template-parts/page/content-page.php:24
+#: template-parts/page/content-page_with_widgets.php:24
+#: template-parts/page/content-page-single_column.php:24
+#: template-parts/post/content-gallery.php:76
+#: template-parts/post/content.php:62 template-parts/post/content-audio.php:89
+#: template-parts/post/content-video.php:88
+#: template-parts/post/content-image.php:66
+msgid "Pages:"
+msgstr "Páginas:"
+
+#: template-parts/post/content-none.php:22
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Pronto para publicar pela primeira vez? <a href=“%1$s”>Começar aqui</a>."
+
+#: template-parts/post/content-none.php:26
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Parece que não encontrou o que procurava. Talvez uma pesquisa possa ajudar."
+
+#: template-parts/navigation/navigation-top.php:15
+msgid "Menu"
+msgstr "Menu"
+
+#: template-parts/header/site-branding.php:32
+msgid "Scroll down to content"
+msgstr "Ir para baixo para ver conteúdo"
+
+#: single-books.php:31
+msgid "Previous Book"
+msgstr "Livro anterior"
+
+#: single-books.php:32
+msgid "Next Book"
+msgstr "Próximo Livro"
+
+#: footer.php:24
+msgid "Footer Social Links Menu"
+msgstr "Menu Links Sociais de Rodapé"
+
+#. Template Name of the theme
+msgid "Widgets"
+msgstr "Widgets"
+
+#: single.php:31 single-blog_en.php:31
+msgid "Previous Post"
+msgstr "Publicação anterior"
+
+#: single.php:32 single-blog_en.php:32
+msgid "Next Post"
+msgstr "Próxima publicação"
+
+#: sidebar-europarl.php:17
+msgid "Sidebar for Europarl"
+msgstr "Barra lateral para Europarl"
+
+#: single-videos.php:31
+msgid "Previous Video"
+msgstr "Vídeo anterior"
+
+#: single-videos.php:32
+msgid "Next Video"
+msgstr "Próximo vídeo"
+
+#: sidebar.php:16
+msgid "Default Blog Sidebar"
+msgstr "Barra lateral do Blog por omissão"
+
+#: sidebar-books.php:17
+msgid "Sidebar for Books"
+msgstr "Barra lateral para Livros"
+
+#: searchform.php:15
+msgctxt "label"
+msgid "Search for:"
+msgstr "Procurar por:"
+
+#: searchform.php:17
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Procurar &hellip;"
+
+#: searchform.php:18
+msgctxt "submit button"
+msgid "Search"
+msgstr "Procurar"
+
+#: sidebar-videos.php:17
+msgid "Sidebar for Videos"
+msgstr "Barra lateral para vídeos"
