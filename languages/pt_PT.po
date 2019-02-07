@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2019-02-05T20:01:41+00:00\n"
-"PO-Revision-Date: 2019-02-05 22:41+0000\n"
+"PO-Revision-Date: 2019-02-05 23:33+0000\n"
 "X-Generator: Poedit 2.2.1\n"
 "X-Domain: historiador\n"
 "Last-Translator: \n"
@@ -93,7 +93,7 @@ msgid ""
 "template."
 msgstr ""
 "Adicionar aqui widgets para mostrar na barra lateral em páginas que usem o "
-"template “widgets”."
+"template \"widgets\"\"."
 
 #: functions.php:220
 msgid "Blog EN Sidebar"
@@ -105,7 +105,7 @@ msgid ""
 "and archive pages."
 msgstr ""
 "Adicionar aqui widgets para mostrar na barra lateral em publicações e no "
-"arquivo de “The Man from Lisbon”."
+"arquivo de \"The Man from Lisbon\"\"."
 
 #: functions.php:232
 msgid "Books Sidebar"
@@ -172,7 +172,7 @@ msgstr ""
 #: template-parts/post/content-video.php:81
 #: template-parts/post/content-image.php:59
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr "Continuar a ler<span class=“screen-reader-text”> “%s”</span>"
+msgstr "Continuar a ler<span class=\"screen-reader-text\"> \"%s\"</span>"
 
 #: functions.php:353
 msgid "Expand child menu"
@@ -283,7 +283,7 @@ msgstr "Pause background video"
 #. translators: %s: post date
 #: inc/template-tags.php:53
 msgid "<span class=\"screen-reader-text\">Posted on</span> %s"
-msgstr "<span class=“screen-reader-text”>Publicado em</span> %s"
+msgstr "<span class=\"screen-reader-text\">Publicado em</span> %s"
 
 #. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:67
@@ -301,7 +301,7 @@ msgstr "Etiquetas"
 #. translators: %s: Name of current post
 #: inc/template-tags.php:118
 msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr "Editar<span class=“screen-reader-text”> “%s”</span>"
+msgstr "Editar<span class=\"screen-reader-text\"> \"%s\"</span>"
 
 #: inc/template-tags.php:152
 msgid "Front Page Section %1$s Placeholder"
@@ -431,7 +431,7 @@ msgstr "Páginas:"
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Pronto para publicar pela primeira vez? <a href=“%1$s”>Começar aqui</a>."
+"Pronto para publicar pela primeira vez? <a href=\"%1$s\">Começar aqui</a>."
 
 #: template-parts/post/content-none.php:26
 msgid ""
