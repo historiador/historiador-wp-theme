@@ -1,33 +1,5 @@
 // vi:foldmethod=marker
 
-// Tasks for clean up and optimisation of style sheets {{{
-// -------------------------------------------------------
-// This list has been reviewed on 2018-11-20, marking the relaunch of
-// the development cycle.
-//
-// None of these is blocking the implementation of the theme on a
-// production environment.  They are, nonetheless, important for
-// streamlining development and making sure everything conforms to a
-// defined set of standards.
-//
-// Recall that we use the "TODO" tag to easily find pending tasks in the
-// various files that make up this theme.  For example, executing grep
-// -R 'TODO' inside a directory will give you a list with them.
-//
-//
-// Tasks regarding the various colours used in the stylesheets:
-//
-//     TODO document colours used for foregrounds, backgrounds, borders
-//     fg: #000, #222, #333, #666, #767676, #21759b (accessibility)
-//     bg: #fff, #fafafa, #f1f1f1, #eee, #ddd
-//     border: #333, #666, #bbb, #0085ba (customizer), rgba(255, 255, 255, 0.6) (header)
-//
-// Tasks regarding scaling and measures:
-//     TODO document white space NOTE it is a mess
-//     TODO document font sizes
-//     TODO document other patterns
-// }}}
-
 // _variables.scss
 // ===============
 
@@ -36,26 +8,31 @@
 
 // Palette
 // -------
+//
 // Notes on the colours used and their interplay {{{
+// -------------------------------------------------
 // Naming convention follows Linux terminal colours for the first 16
 // escape codes:
 //
-// 0-7 are: black, red, green, yellow, blue, magenta, cyan. white
+// 0-7 are: black, red, green, yellow, blue, magenta, cyan, white
 // 8-15 are their corresponding bright variants
 //
-// "Base values" are black and white variants.  Colour 15 is the default
-// background, while 7 is its alternative.  Colour 0 is the default
-// foeground value, while 8 is its alternative.
+// "Base values" are the black and white variants.  Colour 15 is the
+// default background, while 7 is its alternative.  Colour 0 is the
+// default foreground value, while 8 is its alternative.
 //
 // "Accent values" are all of the remaining 12 colours.
 //
-// All base values are WCAG AAA compliant (>= 7:1) against each other.
+// All base values are WCAG AAA compliant (>= 7:1) against each other,
+// with the exception of colour 0 <=> colour 8 ; colour 15 <=> colour 7.
 //
-// All accent values are WCAG AAA compliant against col15 (8.25:1)
-// All bright accents are WCAG AAA compliant for large sizes against col15 (5.50:1)
+// All accent values (1-6) are WCAG AAA compliant against col15
+// (8.25:1).  Meanwhile, all bright accents (9-14) are WCAG AAA
+// compliant for large sizes against col15 (5.50:1)
 //
-// All accent values are WCAG AAA compliant against col7 (7:1)
-// All bright accents are WCAG AAA compliant for large sizes against col7 (4.70:1)
+// All accent values (1-6) are WCAG AAA compliant against col7 (7:1).
+// Meanwhile, all bright accents (9-14) are WCAG AAA compliant for large
+// sizes against col7 (4.70:1)
 //
 // Link colours for body text must have minimum contrast 3:1 against fgs
 // All bright accents qualify.  This means that links inside paragraphs
@@ -64,14 +41,16 @@
 // little to no surrounding text can use a non-bright accent value.
 //
 // In terms of colour blindness, the best value for paragraph links is
-// col12 and for other links col4.
+// col12 and for other links col4.  However, if we underline links in
+// body copy, then we can also use col4.
 //
 // The rest of the palette can be used to denote actions, highlight
 // elements, etc.  Bear in mind that large blocks can easily use bright
 // accents because these comply with the WCAG AAA standard for point
-// sizes => 18 (24px).
+// sizes >= 18 (24px).
 //
 // Further reading: https://webaim.org
+//
 // }}}
 $color-palette-0: #1a1a1a; // black variant
 $color-palette-1: #a20000; // red variant
@@ -120,27 +99,6 @@ $color-extra-link-alt: $color-palette-5;
 
 // Font stacks
 // -----------
-// Notes on the font stacks {{{
-// See `webfonts.css` for custom web fonts.  See `gulpfile.js` gulp task
-// `webfonts` for building said style sheet.  The font files are locates
-// under assets/fonts.
-//
-// Use this website to get fonts from the google fonts repos:
-// https://google-webfonts-helper.herokuapp.com/
-//
-// The webfonts used are Roboto (300, 400, 400i, 700, 700i).  Note
-// though that only the latin subset is provided.
-// TODO research need for more subsets, e.g. latin extended, greek…
-//
-// The reason for selecting Roboto is purely practical: to the untrained
-// eye it looks just like "the standard" sans-serif font.  But more
-// importantly, any character that is not provided by the web fonts we
-// load will not look out of place (say, if the system loads a greek
-// letter from Helvetica).
-//
-// TODO do we use emoji?  We might need to include a reference in the
-// stack.
-// }}}
 $font-stack-serif: 'Times New Roman', Times, 'Liberation Serif', serif;
 $font-stack-sans: 'FiraGO', 'Fira Sans', Roboto, Helvetica, Arial, sans-serif;
 $font-stack-mono: 'Hack alt', 'Hack', Monaco, Consolas, 'Ubuntu Mono', monospace;
@@ -152,32 +110,35 @@ $font-family-code: $font-stack-mono;
 
 // Font scale
 // ----------
+//
 // Notes on the font scale {{{
+//
 // We use a font scale to achieve a vertical rhythm.  The text is our
-// measure for the entire site layout.  Personally, I have found that
-// simple designs only need a html { font-size: 100% } with no
-// viewport-aware font scaling (no media queries).  If 1rem = 100%, then
-// the scales are defined in rem and everything zooms in/out smoothly.
-// This respects the user's choice to set a default font size in their
-// browser settings.
+// measure for the entire site layout.
+//
+// Personally, I have found that simple designs only need a html
+// { font-size: 100% } with no viewport-aware font scaling (no media
+// queries).  If 1rem = 100%, then the scales are defined in rem and
+// everything zooms in/out smoothly.  This respects the user's choice to
+// set a default font size in their browser settings.
 //
 // That granted, the de facto standard is 1rem = 16px.  We try to make
 // scaling media-aware only when necessary.
 //
-// These are the operations that derive the scale:
-//     n * x
-//     n / x
-// where `n` is the {in,de}cremented base value and `x` the ratio.
+// These are the operations that derive the scale: n * x , n / x where
+// `n` is the {in,de}cremented base value and `x` the ratio.
 //
 // Some common ratios, followed by their conventional name:
 //     1.067     minor second
 //     1.125     major second
 //     1.2       minor third
 //     1.25      major third
+//
 // See http://www.modularscale.com
 //
-// Here we are using major second.  It has proportions that do not
+// Here we are using the "major second".  It has proportions that do not
 // create major discrepencies at scale.
+//
 // }}}
 
 // Font sizes
@@ -223,7 +184,6 @@ $viewport-measure-large: 1000px;
 
 // Viewports
 // ---------
-// TODO review based on styles from Historiador
 $viewport-size-tablet: 48em;
 $viewport-size-desktop: 75em;
 
@@ -239,11 +199,9 @@ $border-color-dark-2: #555;
 $border-color-light-0: #eee;
 $border-color-light-1: #cecece;
 $border-color-light-2: #bababa;
-// $border-color-highlight: $notifyinfo;
-// $border-color-highlight-alt: $notifycrit;
 
-// Mixins
-// ------
+// Functions
+// =========
 
 @mixin font-smoothing {
     -webkit-font-smoothing: antialiased;
