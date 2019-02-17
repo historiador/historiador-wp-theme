@@ -30,7 +30,7 @@ function historiador_setup() {
 	 * If you're building a theme based on Historiador, use a find and replace
 	 * to change 'historiador' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'historiador' );
+	load_theme_textdomain( 'historiador', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -107,6 +107,7 @@ function historiador_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
 }
 add_action( 'after_setup_theme', 'historiador_setup' );
 
