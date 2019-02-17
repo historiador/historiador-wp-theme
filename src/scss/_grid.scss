@@ -1,0 +1,30 @@
+// NOTE we will opt for a more traditional solution due to partial
+// support for `css-grid`.  See https://caniuse.com/#search=css%20grid.
+// Checked on 2019-02-17.
+.index-grid {
+	@extend %clearfix;
+
+	display: block;
+	width: 100%;
+
+	// The grid item (a single blog post)
+	article {
+		@include tablet {
+			display: inline-block;
+			float: left;
+			width: calc(calc(100% / 2) - #{$space-1});
+		}
+
+		@include desktop {
+			width: calc(calc(100% / 3) - #{$space-1});
+		}
+
+		display: block;
+		width: 100%;
+		padding: $space-1;
+
+		.entry-title {
+			margin-top: $space-0;
+		}
+	}
+}

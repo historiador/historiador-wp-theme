@@ -21,7 +21,7 @@ get_header(); ?>
 		</header><!-- .page-header -->
 	<?php endif; ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area index-grid">
 		<main id="main" class="site-main" role="main">
 
 		<?php
@@ -58,7 +58,14 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<?php get_sidebar( 'videos' ); ?>
+	<!-- 
+		NOTE we will not be displaying a sidebar in the index layout
+		because it limits the grid to a small surface area.  The
+		alternative would be to create bespoke styles for a narrower
+		sidebar and a correspondigly wider content area.  That is too
+		much complexity for too little added value.
+	-->
+	<!-- <?php get_sidebar( 'videos' ); ?> -->
 </div><!-- .wrap -->
 
 <?php
