@@ -1,30 +1,55 @@
-// NOTE we will opt for a more traditional solution due to partial
-// support for `css-grid`.  See https://caniuse.com/#search=css%20grid.
-// Checked on 2019-02-17.
-.index-grid {
+// The grid layout is used by the "Books" and "Videos" Custom Post
+// Types.  See their archive page templates for the relevant markup.
+
+// Override defaults.  This is necessary because the grid layout
+// constiutes a deviation from the design patterns of the rest of the
+// theme.
+#primary.index-grid,
+.has-sidebar:not(error404) #primary.index-grid {
+	display: block;
+	float: none;
+	width: 100%;
+}
+
+// The grid styles are defined using flexbox styles.  We opt to do as
+// much because `css-grid` is not as well supported across various
+// browsers.  See https://caniuse.com/#search=css%20grid.  Checked on
+// 2019-02-17.
+.index-grid-container {
 	@extend %clearfix;
 
-	display: block;
+	display: flex;
 	width: 100%;
+	height: auto;
+	flex-wrap: wrap;
+	flex-direction: row;
 
 	// The grid item (a single blog post)
 	article {
 		@include tablet {
-			display: inline-block;
-			float: left;
-			width: calc(calc(100% / 2) - #{$space-1});
+			width: calc(calc(100% / 2) - 1.1rem); // NOTE the irregular rem, which is padding+margin
+
+			&:nth-of-type(2n+1) {
+				margin-left: 0;
+			}
 		}
 
 		@include desktop {
-			width: calc(calc(100% / 3) - #{$space-1});
+			width: calc(calc(100% / 3) - 1.1rem); // NOTE the irregular rem, which is padding+margin
+
+			&:nth-of-type(3n+1) {
+				margin-left: 0;
+			}
 		}
 
-		display: block;
 		width: 100%;
+		height: auto;
+		margin: 0.1rem;
 		padding: $space-1;
+		flex-grow: 0; // Set to 1 to fill in empty space.  Creates an asymmetric layout.
 
 		.entry-title {
-			margin-top: $space-0;
+			margin-top: $space-0; // No extra space between date and title.
 		}
 	}
 }
