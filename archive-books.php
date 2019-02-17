@@ -22,7 +22,7 @@ get_header(); ?>
 	<?php endif; ?>
 
 	<div id="primary" class="content-area index-grid">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main index-grid-container" role="main">
 
 		<?php
 		if ( have_posts() ) :
@@ -65,7 +65,6 @@ get_header(); ?>
 		sidebar and a correspondigly wider content area.  That is too
 		much complexity for too little added value.
 	-->
-	<!-- <?php get_sidebar( 'books' ); ?> -->
 </div><!-- .wrap -->
 
 <?php
