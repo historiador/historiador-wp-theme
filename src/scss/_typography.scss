@@ -170,8 +170,8 @@ ol + h2,
 ol + h3,
 blockquote + h2,
 blockquote + h3,
-div + h2,
-div + h3,
+div:not(.entry-meta) + h2,
+div:not(.entry-meta) + h3,
 small + h2,
 small + h3 {
     margin-top: $vertical-rhythm-2;

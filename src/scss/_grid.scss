@@ -47,9 +47,5 @@
 		margin: 0.1rem;
 		padding: $space-1;
 		flex-grow: 0; // Set to 1 to fill in empty space.  Creates an asymmetric layout.
-
-		.entry-title {
-			margin-top: $space-0; // No extra space between date and title.
-		}
 	}
 }
